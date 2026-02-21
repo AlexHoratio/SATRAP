@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://vkkcbew2jkqe"]
+
+[ext_resource type="Texture2D" uid="uid://dxpl8opi2t1bi" path="res://Graphics/Entities/outpost.png" id="1_u5n8c"]
+
+[node name="outpost" type="Node2D" unique_id=2144949416]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=703427223]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_u5n8c")

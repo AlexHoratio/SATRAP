@@ -1,0 +1,296 @@
+[gd_scene format=3 uid="uid://dih3hl78a76fp"]
+
+[ext_resource type="PackedScene" uid="uid://b13520h07qp1x" path="res://Prefabs/CanvasLayer/g9patch.tscn" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://yo3coyf2eyhf" path="res://Scenes/grid.gd" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://cu4wsk3v6a837" path="res://Scenes/construction.gd" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://gn62s57iir7y" path="res://Graphics/Entities/railway.png" id="3_jjvhh"]
+[ext_resource type="Script" uid="uid://b0bj1dqnfmnhl" path="res://Scenes/construction_button.gd" id="3_kry3j"]
+[ext_resource type="Texture2D" uid="uid://dxpl8opi2t1bi" path="res://Graphics/Entities/outpost.png" id="5_6bp64"]
+[ext_resource type="Texture2D" uid="uid://dw7d5ubsctinn" path="res://Graphics/Entities/enemy.png" id="6_344ge"]
+
+[node name="main" type="Node2D" unique_id=282878094]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1609091954]
+
+[node name="construction" parent="CanvasLayer" unique_id=968642944 instance=ExtResource("1_bo1nx")]
+offset_left = 28.0
+offset_top = 996.0
+offset_right = -1588.0
+offset_bottom = -28.0
+script = ExtResource("2_8gbba")
+
+[node name="Label" type="Label" parent="CanvasLayer/construction" unique_id=1441082568]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.8862745, 0, 1)
+text = "Construction"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/construction" unique_id=2126651039]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.42352942, 1, 0.38431373, 0.13333334)
+
+[node name="Button" type="Button" parent="CanvasLayer/construction" unique_id=752721037]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="unit_menu" type="Control" parent="CanvasLayer/construction" unique_id=954844154]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -399.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="g9patch" parent="CanvasLayer/construction/unit_menu" unique_id=1304420925 instance=ExtResource("1_bo1nx")]
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/construction/unit_menu/g9patch" unique_id=1389414590]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.043137256, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/construction/unit_menu/g9patch" unique_id=1463940379]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 85.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer" unique_id=63198898]
+layout_mode = 2
+
+[node name="railway" type="Control" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer" unique_id=2138318437]
+custom_minimum_size = Vector2(304, 64)
+layout_mode = 2
+script = ExtResource("3_kry3j")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway" unique_id=9293547]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -20.0
+offset_right = 53.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("3_jjvhh")
+
+[node name="Label" type="Label" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway" unique_id=1465951991]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 19.0
+offset_right = 271.0
+offset_bottom = 42.0
+text = "Railway"
+
+[node name="underlay" type="ColorRect" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway" unique_id=517965942]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.12156863)
+
+[node name="overlay" type="ColorRect" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway" unique_id=2145820061]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.30588236, 0.43529412, 0.07058824)
+
+[node name="Button" type="Button" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway" unique_id=299400563]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="outpost" type="Control" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer" unique_id=753317097]
+custom_minimum_size = Vector2(304, 64)
+layout_mode = 2
+script = ExtResource("3_kry3j")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost" unique_id=206198079]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -20.0
+offset_right = 53.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("5_6bp64")
+
+[node name="Label" type="Label" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost" unique_id=1943443844]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 19.0
+offset_right = 271.0
+offset_bottom = 42.0
+text = "Outpost"
+
+[node name="underlay" type="ColorRect" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost" unique_id=2086475759]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.12156863)
+
+[node name="overlay" type="ColorRect" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost" unique_id=740036295]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.30588236, 0.43529412, 0.07058824)
+
+[node name="Button" type="Button" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost" unique_id=828809633]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="enemy" type="Control" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer" unique_id=1770607311]
+custom_minimum_size = Vector2(304, 64)
+layout_mode = 2
+script = ExtResource("3_kry3j")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy" unique_id=232434608]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -20.0
+offset_right = 53.0
+offset_bottom = 20.0
+grow_vertical = 2
+texture = ExtResource("6_344ge")
+
+[node name="Label" type="Label" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy" unique_id=1673043886]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 19.0
+offset_right = 271.0
+offset_bottom = 42.0
+text = "Enemy"
+
+[node name="underlay" type="ColorRect" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy" unique_id=1093215265]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.12156863)
+
+[node name="overlay" type="ColorRect" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy" unique_id=1028224650]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.30588236, 0.43529412, 0.07058824)
+
+[node name="Button" type="Button" parent="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy" unique_id=1962893317]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="current_selection" type="Label" parent="CanvasLayer/construction/unit_menu/g9patch" unique_id=1546192649]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 19.0
+offset_right = 294.0
+offset_bottom = 68.0
+text = "Current Selection:
+asdf"
+horizontal_alignment = 1
+
+[node name="grid" type="Node2D" parent="." unique_id=235760457]
+position = Vector2(212, 203)
+script = ExtResource("1_jjgbg")
+
+[connection signal="mouse_entered" from="CanvasLayer/construction/Button" to="CanvasLayer/construction" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/construction/Button" to="CanvasLayer/construction" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/construction/Button" to="CanvasLayer/construction" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway/Button" to="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway/Button" to="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway/Button" to="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/railway" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost/Button" to="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost/Button" to="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost/Button" to="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/outpost" method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy/Button" to="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy/Button" to="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy/Button" to="CanvasLayer/construction/unit_menu/g9patch/ScrollContainer/VBoxContainer/enemy" method="_on_button_pressed"]

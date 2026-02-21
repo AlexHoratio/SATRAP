@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b13520h07qp1x"]
+
+[ext_resource type="Texture2D" uid="uid://fwtc5uki6b37" path="res://Graphics/CanvasLayer/g9patch_hollow.png" id="1_5ekk0"]
+
+[node name="g9patch" type="NinePatchRect" unique_id=968642944]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1616.0
+offset_bottom = -998.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5ekk0")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3

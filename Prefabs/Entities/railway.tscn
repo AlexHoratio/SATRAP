@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cnr44q23pjsvn"]
+
+[ext_resource type="Texture2D" uid="uid://gn62s57iir7y" path="res://Graphics/Entities/railway.png" id="1_8gujj"]
+
+[node name="railway" type="Node2D" unique_id=2144949416]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=703427223]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_8gujj")
