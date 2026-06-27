@@ -9,10 +9,10 @@ var move_timer = 0
 
 var piece_movement_time_scale = 1
 
-var grid_cell_size = Vector2(48, 48)
-var grid_size = Vector2(32, 16)
-var grid_color = Color("#022211")
-var grid_thickness = 4
+var grid_cell_size = Vector2(16, 16)
+var grid_size = Vector2(96, 48)
+var grid_color = Color("0e633bff")
+var grid_thickness = 1
 
 func _ready():
 	pass

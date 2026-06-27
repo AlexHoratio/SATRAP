@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="SATRAP"
-run/main_scene="uid://dih3hl78a76fp"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="uid://6h6jg2grc2nm"
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
+window/size/viewport_width=1440
 window/size/viewport_height=1080
 window/size/mode=3
 window/stretch/mode="viewport"
@@ -37,4 +37,4 @@ left_click={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-environment/defaults/default_clear_color=Color(0, 0.043137256, 0, 1)
+environment/defaults/default_clear_color=Color(3.6098065e-08, 0.07296551, 5.4147094e-08, 1)

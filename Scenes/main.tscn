@@ -13,10 +13,10 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1609091954]
 
 [node name="construction" parent="CanvasLayer" unique_id=968642944 instance=ExtResource("1_bo1nx")]
-offset_left = 28.0
-offset_top = 996.0
-offset_right = -1588.0
-offset_bottom = -28.0
+offset_left = 56.0
+offset_top = 998.0
+offset_right = -1196.0
+offset_bottom = -26.0
 script = ExtResource("2_8gbba")
 
 [node name="Label" type="Label" parent="CanvasLayer/construction" unique_id=1441082568]
@@ -279,7 +279,7 @@ asdf"
 horizontal_alignment = 1
 
 [node name="grid" type="Node2D" parent="." unique_id=235760457]
-position = Vector2(212, 203)
+position = Vector2(14, 7)
 script = ExtResource("1_jjgbg")
 
 [connection signal="mouse_entered" from="CanvasLayer/construction/Button" to="CanvasLayer/construction" method="_on_button_mouse_entered"]

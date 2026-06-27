@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://6h6jg2grc2nm"]
+
+[ext_resource type="Texture2D" uid="uid://btl3ua83k4ban" path="res://Graphics/title.png" id="1_28flt"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="2_48xlc"]
+
+[node name="main_menu" type="Control" unique_id=1572872476]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="TextureRect" parent="." unique_id=32987530]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -508.91913
+offset_top = 81.0
+offset_right = 508.9192
+offset_bottom = 650.0
+grow_horizontal = 2
+texture = ExtResource("1_28flt")
+expand_mode = 2
+
+[node name="play" type="LinkButton" parent="." unique_id=1781984326]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = 284.0
+offset_right = 63.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5378483, 1, 0.5317338, 1)
+theme_override_fonts/font = ExtResource("2_48xlc")
+text = "> Start Game <"
+underline = 1
+
+[node name="settings" type="LinkButton" parent="." unique_id=1005420468]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.0
+offset_top = 359.0
+offset_right = 54.0
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5378483, 1, 0.5317338, 1)
+theme_override_fonts/font = ExtResource("2_48xlc")
+text = "> Settings <"
+underline = 1
+
+[node name="quit" type="LinkButton" parent="." unique_id=1810668914]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = 431.0
+offset_right = 36.0
+offset_bottom = 447.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5378483, 1, 0.5317338, 1)
+theme_override_fonts/font = ExtResource("2_48xlc")
+text = "> Quit <"
+underline = 1
