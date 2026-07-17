@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://dsrv54m2cvqwa"]
+
+[ext_resource type="Texture2D" uid="uid://cyvbi81ii6bi6" path="res://Graphics/images.jpg" id="1_fm0yt"]
+[ext_resource type="Script" uid="uid://cbtut4sbpxi6m" path="res://Scenes/satrap.gd" id="1_vfb65"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_y32xm"]
+
+[sub_resource type="Shader" id="Shader_u8pq8"]
+code = "shader_type canvas_item;
+
+uniform sampler2D screen_tex: hint_screen_texture, filter_linear_mipmap;
+uniform float scanlines_1 = 500.;
+uniform float scanlines_2 = 25.;
+uniform float scan_reduction = .1;
+uniform float blur: hint_range(0.0, 5.0, 0.1) = 0.35;
+uniform float diffusion = 0.1;
+
+uniform float vinnette_alpla: hint_range(0.0, 1.0, 0.01) = 1.0;
+uniform float vinnette_inner_radius = 3.5;
+
+
+float random (vec2 uv) {
+    return fract(sin(dot(uv.xy,
+        vec2(12.9898,78.233))) * 43758.5453123);
+}
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	vec2 uv_noise = UV * TIME;
+	vec2 uv_scan1 = vec2(UV.x, UV.y + TIME);
+	vec2 uv_scan2 = vec2(UV.x, UV.y + TIME * .4);
+	
+	
+	
+	
+	vec4 screen = textureLod(screen_tex, SCREEN_UV, blur);
+	
+	float scanlines1 = sin(uv_scan1.y * scanlines_1) * scan_reduction - scan_reduction;
+	float scanlines2 = sin(uv_scan2.y * scanlines_2) * scan_reduction - scan_reduction;
+	
+	vec4 noise = vec4(random(uv_noise), random(uv_noise), random(uv_noise), .02);
+	
+	float vinnette_x = abs(UV.r-.5)*2.0;
+	float vinnette_y = abs(UV.g-.5)*2.0;
+	float vinnette_q = 1.0-(1.0-sqrt(vinnette_x*vinnette_x+vinnette_y*vinnette_y)
+	/vinnette_inner_radius);
+	screen.rgb += vec3(-vinnette_q * vinnette_alpla, -vinnette_q * vinnette_alpla, -vinnette_q * vinnette_alpla);
+	
+	
+	
+	COLOR = screen;
+	
+	
+	COLOR.rgb += vec3(scanlines1);
+	COLOR.rgb += vec3(scanlines2);
+	
+	COLOR.rgb += vec3(diffusion, diffusion, diffusion);
+	
+	
+	
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fm0yt"]
+shader = SubResource("Shader_u8pq8")
+shader_parameter/scanlines_1 = 500.0
+shader_parameter/scanlines_2 = 3.0
+shader_parameter/scan_reduction = 0.1
+shader_parameter/blur = 0.35
+shader_parameter/diffusion = 0.185
+shader_parameter/vinnette_alpla = 0.0
+shader_parameter/vinnette_inner_radius = 1000000.0
+
+[node name="satrap" type="Control" unique_id=1710664835]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vfb65")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1265064259]
+
+[node name="crt" type="ColorRect" parent="CanvasLayer" unique_id=233619467]
+material = SubResource("ShaderMaterial_fm0yt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Images" type="Sprite2D" parent="." unique_id=863690617]
+position = Vector2(722, 516)
+texture = ExtResource("1_fm0yt")
+
+[node name="asdfasd" type="LinkButton" parent="." unique_id=2137662787]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.0
+offset_top = -269.0
+offset_right = 81.0
+offset_bottom = -221.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 48
+text = "> Ok <"
+underline = 2
+
+[node name="shadow" type="Label" parent="asdfasd" unique_id=1305118068]
+self_modulate = Color(1, 1, 1, 0.20392157)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -12.0
+offset_right = 81.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 48
+text = "> Ok <"
+
+[connection signal="pressed" from="asdfasd" to="." method="_on_asdfasd_pressed"]
