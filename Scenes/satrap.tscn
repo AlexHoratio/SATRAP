@@ -89,6 +89,268 @@ script = ExtResource("1_vfb65")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1265064259]
 
+[node name="utilities" type="Control" parent="CanvasLayer" unique_id=2082412739]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="construction" type="Button" parent="CanvasLayer/utilities" unique_id=1511122664]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -43.0
+offset_right = 71.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 48
+
+[node name="text" type="Label" parent="CanvasLayer/utilities/construction" unique_id=1487414732]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 16
+text = ".------------.
+| Construction |
+|              |"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="policies" type="Button" parent="CanvasLayer/utilities" unique_id=214299548]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -43.0
+offset_right = -81.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 48
+
+[node name="text" type="Label" parent="CanvasLayer/utilities/policies" unique_id=408975606]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 16
+text = ".--------.
+| Policies |
+|          |"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="research" type="Button" parent="CanvasLayer/utilities" unique_id=1250232833]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 69.0
+offset_top = -43.0
+offset_right = 181.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 48
+
+[node name="text" type="Label" parent="CanvasLayer/utilities/research" unique_id=348633293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 16
+text = ".--------.
+| Research |
+|          |"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="info" type="Control" parent="CanvasLayer" unique_id=473861913]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="population" type="Button" parent="CanvasLayer/info" unique_id=444183160]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 218.0
+offset_top = -43.0
+offset_right = 348.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 48
+
+[node name="text" type="Label" parent="CanvasLayer/info/population" unique_id=220097183]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 16
+text = ".----------.
+| Population |
+|            |"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="resources" type="Button" parent="CanvasLayer/info" unique_id=641145753]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 353.0
+offset_top = -43.0
+offset_right = 465.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 48
+
+[node name="text" type="Label" parent="CanvasLayer/info/resources" unique_id=1193692819]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 16
+text = ".---------.
+| Resources |
+|           |"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="military" type="Button" parent="CanvasLayer/info" unique_id=1606879017]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 471.0
+offset_top = -43.0
+offset_right = 583.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 48
+
+[node name="text" type="Label" parent="CanvasLayer/info/military" unique_id=775410507]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 16
+text = ".--------.
+| Military |
+|          |"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="local_approval" type="Button" parent="CanvasLayer" unique_id=1210516025]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -561.0
+offset_top = -43.0
+offset_right = -237.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 48
+
+[node name="text" type="Label" parent="CanvasLayer/local_approval" unique_id=1949061546]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+theme_override_font_sizes/font_size = 16
+text = ".---------------------------------.
+|  Local Approval: None! You suck!  |
+|                                   |"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="crt" type="ColorRect" parent="CanvasLayer" unique_id=233619467]
 material = SubResource("ShaderMaterial_fm0yt")
 anchors_preset = 15
