@@ -1,0 +1,20 @@
+extends Camera2D
+
+var camera_speed = 100
+
+func _ready():
+	pass
+	
+func _process(delta):
+	var movement_vector = Vector2(0, 0)
+	
+	if Input.is_action_pressed("left"):
+		movement_vector.x -= 1
+	if Input.is_action_pressed("right"):
+		movement_vector.x += 1
+	if Input.is_action_pressed("up"):
+		movement_vector.y -= 1
+	if Input.is_action_pressed("down"):
+		movement_vector.y += 1
+		
+	position += movement_vector * camera_speed * delta
