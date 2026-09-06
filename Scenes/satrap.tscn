@@ -4,8 +4,6 @@
 [ext_resource type="Script" uid="uid://cbtut4sbpxi6m" path="res://Scenes/satrap.gd" id="1_vfb65"]
 [ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_y32xm"]
 [ext_resource type="Script" uid="uid://cvgypix1816iu" path="res://Scenes/world.gd" id="4_iv1gs"]
-[ext_resource type="Texture2D" uid="uid://c7fy5u3htdp8y" path="res://Graphics/Entities/Sprites/Administrative.png" id="4_y32xm"]
-[ext_resource type="Texture2D" uid="uid://dr8xixatwevf5" path="res://Graphics/Entities/Sprites/Civil.png" id="5_loocr"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
 
 [sub_resource type="Shader" id="Shader_u8pq8"]
@@ -365,10 +363,12 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
+visible = false
 position = Vector2(722, 516)
 texture = ExtResource("1_fm0yt")
 
 [node name="asdfasd" type="LinkButton" parent="." unique_id=2137662787]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -409,29 +409,7 @@ text = "> Ok <"
 [node name="world" type="Node2D" parent="." unique_id=393979327]
 script = ExtResource("4_iv1gs")
 
-[node name="Administrative" type="Sprite2D" parent="world" unique_id=810960740]
-texture_filter = 1
-position = Vector2(288, 608)
-scale = Vector2(2, 2)
-texture = ExtResource("4_y32xm")
-
-[node name="Civil" type="Sprite2D" parent="world" unique_id=1099769441]
-texture_filter = 1
-position = Vector2(320, 608)
-scale = Vector2(2, 2)
-texture = ExtResource("5_loocr")
-
-[node name="Civil2" type="Sprite2D" parent="world" unique_id=351028391]
-texture_filter = 1
-position = Vector2(320, 576)
-scale = Vector2(2, 2)
-texture = ExtResource("5_loocr")
-
-[node name="Civil3" type="Sprite2D" parent="world" unique_id=673850998]
-texture_filter = 1
-position = Vector2(384, 576)
-scale = Vector2(2, 2)
-texture = ExtResource("5_loocr")
+[node name="buildings" type="Node2D" parent="world" unique_id=1515735873]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=62294094]
 position = Vector2(720, 540)

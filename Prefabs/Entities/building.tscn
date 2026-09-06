@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c6gatc2wlssfe"]
+
+[ext_resource type="Script" uid="uid://fwmxo2lkqi5f" path="res://Prefabs/Entities/building.gd" id="1_05pp2"]
+
+[node name="building" type="Node2D" unique_id=1304179753 groups=["buildings"]]
+script = ExtResource("1_05pp2")

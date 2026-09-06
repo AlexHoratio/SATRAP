@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b6ykb813r16tu"]
+
+[ext_resource type="PackedScene" uid="uid://c6gatc2wlssfe" path="res://Prefabs/Entities/building.tscn" id="1_tmxoc"]
+[ext_resource type="Texture2D" uid="uid://c7fy5u3htdp8y" path="res://Graphics/Entities/Sprites/Administrative.png" id="2_et0ow"]
+
+[node name="building" unique_id=1304179753 instance=ExtResource("1_tmxoc")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=2134217759]
+texture_filter = 1
+scale = Vector2(6, 6)
+texture = ExtResource("2_et0ow")

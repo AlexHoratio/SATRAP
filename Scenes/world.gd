@@ -4,7 +4,7 @@ var tile_size = Vector2(32, 32)
 var line_color = Color(1.0, 1.0, 1.0, 0.137)
 
 func _ready():
-	pass
+	generate_world()
 
 func _process(delta):
 	queue_redraw()
@@ -25,3 +25,41 @@ func _draw():
 		var x_pos = tile_size.x * (x - number_of_vertical_lines/2) + floor(camera_offset.x/tile_size.x) * tile_size.x
 		draw_line(Vector2(x_pos, camera_offset.y - screen_size.y/2.0), Vector2(x_pos, camera_offset.y + screen_size.y/2.0), line_color, 1.0)
 	
+func generate_world() -> void:
+	var admin = load("res://Prefabs/Entities/admin.tscn").instantiate()
+	admin.position = Vector2(720, 540).snapped(tile_size)
+	var tile_offsets = [
+		Vector2(-1, 0),
+		Vector2(-1, 1),
+		Vector2(-1, -1),
+		Vector2(0, -1), 
+		Vector2(0, 1),
+		Vector2(1, 1),
+		Vector2(1, 0),
+		Vector2(1, -1)
+	]
+	admin.occupied_tiles.append(admin.position)
+	for i in tile_offsets:
+		i.x *= tile_size.x
+		i.y *= tile_size.y
+		admin.occupied_tiles.append(admin.position + i)
+		
+	$buildings.add_child(admin)
+	
+	
+	for i in range(100):
+		var civil = load("res://Prefabs/Entities/civil.tscn").instantiate()
+		var building_position = Vector2(720, 540) + Vector2(300 * randf(), 0).rotated(2 * PI * randf())
+		building_position = building_position.snapped(tile_size)
+		
+		var position_occupied = true
+		while position_occupied:
+			building_position = Vector2(720, 540) + Vector2(300 * randf(), 0).rotated(2 * PI * randf())
+			building_position = building_position.snapped(tile_size)
+			position_occupied = false
+			for building in get_tree().get_nodes_in_group("buildings"):
+				if building_position in building.occupied_tiles:
+					position_occupied = true
+		
+		civil.position = building_position
+		$buildings.add_child(civil)

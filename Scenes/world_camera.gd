@@ -1,6 +1,6 @@
 extends Camera2D
 
-var camera_speed = 100
+var camera_speed = 500
 
 func _ready():
 	pass
