@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_y32xm"]
 [ext_resource type="Script" uid="uid://cvgypix1816iu" path="res://Scenes/world.gd" id="4_iv1gs"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
+[ext_resource type="Texture2D" uid="uid://34yg22s20ts1" path="res://Graphics/72_Goeta_sigils.png" id="10_5jg8x"]
 
 [sub_resource type="Shader" id="Shader_u8pq8"]
 code = "shader_type canvas_item;
@@ -52,7 +53,7 @@ void fragment() {
 	
 	
 	
-	COLOR = screen;
+	COLOR = screen * vec4(1.0, 1.0, 1.0, 0.5);
 	
 	
 	COLOR.rgb += vec3(scanlines1);
@@ -410,11 +411,17 @@ text = "> Ok <"
 script = ExtResource("4_iv1gs")
 
 [node name="buildings" type="Node2D" parent="world" unique_id=1515735873]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=62294094]
 position = Vector2(720, 540)
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 script = ExtResource("7_42a5o")
+
+[node name="72GoetaSigils" type="Sprite2D" parent="." unique_id=2011079186]
+visible = false
+position = Vector2(730, 520)
+texture = ExtResource("10_5jg8x")
 
 [connection signal="pressed" from="asdfasd" to="." method="_on_asdfasd_pressed"]

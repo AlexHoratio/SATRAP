@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ofprkwaoi7ik"]
+
+[ext_resource type="PackedScene" uid="uid://c6gatc2wlssfe" path="res://Prefabs/Entities/building.tscn" id="1_ab3bx"]
+[ext_resource type="Script" uid="uid://1imu4dt01tpb" path="res://Prefabs/Entities/circulatory_gate.gd" id="2_wmcm0"]
+[ext_resource type="Texture2D" uid="uid://cx7hf8rrobypx" path="res://Graphics/Entities/Sprites/Circulatory Entrance.png" id="2_y8pay"]
+
+[node name="building" unique_id=1304179753 instance=ExtResource("1_ab3bx")]
+script = ExtResource("2_wmcm0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1961335286]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_y8pay")
