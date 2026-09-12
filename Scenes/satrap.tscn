@@ -372,6 +372,16 @@ theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_y32xm")
 script = ExtResource("3_yg0qq")
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/tooltip" unique_id=1885439389]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
 visible = false
 position = Vector2(722, 516)

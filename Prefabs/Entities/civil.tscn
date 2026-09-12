@@ -6,6 +6,7 @@
 
 [node name="building" unique_id=1304179753 instance=ExtResource("1_frv1a")]
 script = ExtResource("2_2gubu")
+building_name = "Civilian"
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=277373365]
 texture_filter = 1

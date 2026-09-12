@@ -17,8 +17,17 @@ animations = [{
 
 [node name="building" unique_id=1304179753 instance=ExtResource("1_h2yeb")]
 script = ExtResource("2_foefc")
+building_name = "Village"
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=369786396]
 texture_filter = 1
 scale = Vector2(0.17, 0.17)
 sprite_frames = SubResource("SpriteFrames_af5lw")
+
+[node name="Button" type="Button" parent="." index="1" unique_id=647066412]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 44.0
+mouse_default_cursor_shape = 2
