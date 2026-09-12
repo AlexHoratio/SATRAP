@@ -11,3 +11,11 @@ script = ExtResource("2_4w0yw")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("2_et0ow")
+
+[node name="Button" type="Button" parent="." index="1" unique_id=44298126]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -46.0
+offset_top = -44.0
+offset_right = 46.0
+offset_bottom = 44.0
+mouse_default_cursor_shape = 2

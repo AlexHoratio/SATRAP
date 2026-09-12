@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://cyvbi81ii6bi6" path="res://Graphics/images.jpg" id="1_fm0yt"]
 [ext_resource type="Script" uid="uid://cbtut4sbpxi6m" path="res://Scenes/satrap.gd" id="1_vfb65"]
 [ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_y32xm"]
+[ext_resource type="Script" uid="uid://bskbhgy6al1hl" path="res://Scenes/tooltip.gd" id="3_yg0qq"]
 [ext_resource type="Script" uid="uid://cvgypix1816iu" path="res://Scenes/world.gd" id="4_iv1gs"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
+[ext_resource type="Texture2D" uid="uid://dj0nj16881k6" path="res://Graphics/image.png" id="7_yg0qq"]
 [ext_resource type="Texture2D" uid="uid://34yg22s20ts1" path="res://Graphics/72_Goeta_sigils.png" id="10_5jg8x"]
 
 [sub_resource type="Shader" id="Shader_u8pq8"]
@@ -363,6 +365,13 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="tooltip" type="Label" parent="CanvasLayer" unique_id=705016870]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+script = ExtResource("3_yg0qq")
+
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
 visible = false
 position = Vector2(722, 516)
@@ -411,7 +420,6 @@ text = "> Ok <"
 script = ExtResource("4_iv1gs")
 
 [node name="buildings" type="Node2D" parent="world" unique_id=1515735873]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=62294094]
 position = Vector2(720, 540)
@@ -423,5 +431,10 @@ script = ExtResource("7_42a5o")
 visible = false
 position = Vector2(730, 520)
 texture = ExtResource("10_5jg8x")
+
+[node name="Image" type="Sprite2D" parent="." unique_id=1618146290]
+visible = false
+position = Vector2(362, 640)
+texture = ExtResource("7_yg0qq")
 
 [connection signal="pressed" from="asdfasd" to="." method="_on_asdfasd_pressed"]

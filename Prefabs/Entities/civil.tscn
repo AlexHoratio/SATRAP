@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://ero38gx06f72"]
 
 [ext_resource type="PackedScene" uid="uid://c6gatc2wlssfe" path="res://Prefabs/Entities/building.tscn" id="1_frv1a"]
-[ext_resource type="Texture2D" uid="uid://cn16gmwqym41x" path="res://Graphics/Entities/Sprites/Civil3.png" id="2_rww8v"]
+[ext_resource type="Script" uid="uid://c1k01eku36n3y" path="res://Prefabs/Entities/civil.gd" id="2_2gubu"]
+[ext_resource type="Texture2D" uid="uid://b64wk2cwiqjru" path="res://Graphics/Entities/Buildings/civil1.png" id="2_rww8v"]
 
 [node name="building" unique_id=1304179753 instance=ExtResource("1_frv1a")]
+script = ExtResource("2_2gubu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=277373365]
 texture_filter = 1
-scale = Vector2(2, 2)
+scale = Vector2(0.24561413, 0.24561404)
 texture = ExtResource("2_rww8v")
+
+[node name="Button" type="Button" parent="." index="1" unique_id=525947965]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_default_cursor_shape = 2
