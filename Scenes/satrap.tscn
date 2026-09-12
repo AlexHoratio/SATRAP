@@ -393,6 +393,8 @@ color = Color(0, 0, 0, 1)
 [node name="food" type="Label" parent="CanvasLayer" unique_id=692823615]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
 script = SubResource("GDScript_af5lw")
 
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
