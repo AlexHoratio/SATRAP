@@ -2,15 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://c6gatc2wlssfe" path="res://Prefabs/Entities/building.tscn" id="1_tmxoc"]
 [ext_resource type="Script" uid="uid://ylu0grg76782" path="res://Prefabs/Entities/admin.gd" id="2_4w0yw"]
-[ext_resource type="Texture2D" uid="uid://pb5wyfbdpa07" path="res://Graphics/Entities/Sprites/Administrative2.png" id="2_et0ow"]
+[ext_resource type="Texture2D" uid="uid://bo6rhmu2o4fgw" path="res://Graphics/Entities/Buildings/admin1.png" id="3_4w0yw"]
 
 [node name="building" unique_id=1304179753 instance=ExtResource("1_tmxoc")]
 script = ExtResource("2_4w0yw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=2134217759]
 texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("2_et0ow")
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("3_4w0yw")
 
 [node name="Button" type="Button" parent="." index="1" unique_id=44298126]
 self_modulate = Color(1, 1, 1, 0)

@@ -2,17 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c6gatc2wlssfe" path="res://Prefabs/Entities/building.tscn" id="1_h2yeb"]
 [ext_resource type="Script" uid="uid://bcn5j1onw8t0a" path="res://Prefabs/Entities/village.gd" id="2_foefc"]
-[ext_resource type="Texture2D" uid="uid://cbi8jcs08hkrr" path="res://Graphics/Entities/Sprites/Village1.png" id="2_pbw8d"]
-[ext_resource type="Texture2D" uid="uid://b5dsdtl0dg5un" path="res://Graphics/Entities/Sprites/Village2.png" id="3_foefc"]
+[ext_resource type="Texture2D" uid="uid://cmxqlntlccpag" path="res://Graphics/Entities/Buildings/village1.png" id="3_pbw8d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_af5lw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pbw8d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_foefc")
+"texture": ExtResource("3_pbw8d")
 }],
 "loop": 1,
 "name": &"default",
@@ -24,6 +20,5 @@ script = ExtResource("2_foefc")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=369786396]
 texture_filter = 1
-scale = Vector2(2, 2)
+scale = Vector2(0.17, 0.17)
 sprite_frames = SubResource("SpriteFrames_af5lw")
-frame = 1
