@@ -6,8 +6,6 @@
 [ext_resource type="Script" uid="uid://bskbhgy6al1hl" path="res://Scenes/tooltip.gd" id="3_yg0qq"]
 [ext_resource type="Script" uid="uid://cvgypix1816iu" path="res://Scenes/world.gd" id="4_iv1gs"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
-[ext_resource type="Texture2D" uid="uid://dj0nj16881k6" path="res://Graphics/image.png" id="7_yg0qq"]
-[ext_resource type="Texture2D" uid="uid://34yg22s20ts1" path="res://Graphics/72_Goeta_sigils.png" id="10_5jg8x"]
 
 [sub_resource type="Shader" id="Shader_u8pq8"]
 code = "shader_type canvas_item;
@@ -82,6 +80,16 @@ shader_parameter/blur = 0.35
 shader_parameter/diffusion = 0.185
 shader_parameter/vinnette_alpla = 0.0
 shader_parameter/vinnette_inner_radius = 1000000.0
+
+[sub_resource type="GDScript" id="GDScript_af5lw"]
+script/source = "extends Label
+
+func _ready():
+	pass
+	
+func _process(delta):
+	text = \"Food: \" + str(int(Ticks.resources[\"food\"]))
+"
 
 [node name="satrap" type="Control" unique_id=1710664835]
 layout_mode = 3
@@ -382,6 +390,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
+[node name="food" type="Label" parent="CanvasLayer" unique_id=692823615]
+offset_right = 40.0
+offset_bottom = 23.0
+script = SubResource("GDScript_af5lw")
+
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
 visible = false
 position = Vector2(722, 516)
@@ -436,15 +449,5 @@ position = Vector2(720, 540)
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 script = ExtResource("7_42a5o")
-
-[node name="72GoetaSigils" type="Sprite2D" parent="." unique_id=2011079186]
-visible = false
-position = Vector2(730, 520)
-texture = ExtResource("10_5jg8x")
-
-[node name="Image" type="Sprite2D" parent="." unique_id=1618146290]
-visible = false
-position = Vector2(362, 640)
-texture = ExtResource("7_yg0qq")
 
 [connection signal="pressed" from="asdfasd" to="." method="_on_asdfasd_pressed"]
