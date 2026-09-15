@@ -3,7 +3,16 @@ extends Node
 signal tick
 
 var resources = {
+	"pop": 100,
+	"pop_cap": 150,
 	"food": 100
+}
+
+var local_interests = {
+	"avantists": 100,
+	"imagists": 0,
+	"fragmentists": 0,
+	"other": 0
 }
 
 var tick_id = 0

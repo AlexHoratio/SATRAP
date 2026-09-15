@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://tgc3hym3uof4"]
+
+[ext_resource type="Texture2D" uid="uid://bgyej052iwn20" path="res://Graphics/CanvasLayer/ascii_border.png" id="1_pf5ax"]
+
+[node name="ascii_patch" type="NinePatchRect" unique_id=58068374]
+texture_filter = 1
+offset_right = 207.0
+offset_bottom = 186.0
+texture = ExtResource("1_pf5ax")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2

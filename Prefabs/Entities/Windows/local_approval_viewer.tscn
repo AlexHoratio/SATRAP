@@ -1,0 +1,239 @@
+[gd_scene format=3 uid="uid://b22tvfl288xgr"]
+
+[ext_resource type="Script" uid="uid://c6o5j6elrvrg8" path="res://Prefabs/Entities/Windows/local_approval_viewer.gd" id="1_b2v4x"]
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="2_nxw78"]
+[ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="3_dch7y"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="4_ui4bp"]
+[ext_resource type="Texture2D" uid="uid://cyvbi81ii6bi6" path="res://Graphics/images.jpg" id="5_enpcn"]
+[ext_resource type="Texture2D" uid="uid://dsetwh3mhteqd" path="res://Graphics/Twilight_Sparkle_Alicorn_vector.webp" id="6_tvlb5"]
+[ext_resource type="Texture2D" uid="uid://bl34k43ukq5ar" path="res://Graphics/sdc3ijd8t80b1.png" id="7_qplvd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7pqoj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tq2b"]
+bg_color = Color(0, 0.6, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v57e"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pqoj"]
+bg_color = Color(0, 0.29803923, 0, 1)
+
+[sub_resource type="Theme" id="Theme_qieeg"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_7pqoj")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_8tq2b")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_6v57e")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_7pqoj")
+
+[node name="local_approval_viewer" type="Control" unique_id=1874523136]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b2v4x")
+
+[node name="ascii_patch" parent="." unique_id=58068374 instance=ExtResource("2_nxw78")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.625
+offset_top = -240.0
+offset_right = 279.625
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dch7y")
+
+[node name="header" type="Control" parent="ascii_patch" unique_id=816033645]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 82.5
+grow_horizontal = 2
+
+[node name="drag" type="Button" parent="ascii_patch/header" unique_id=403895306]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="title" type="Label" parent="ascii_patch/header" unique_id=261911883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ui4bp")
+theme_override_font_sizes/font_size = 32
+text = "Advisors"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="x" type="LinkButton" parent="ascii_patch" unique_id=1159225563]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.625
+offset_top = 26.5
+offset_right = -31.625
+offset_bottom = 58.5
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_ui4bp")
+theme_override_font_sizes/font_size = 32
+text = "X"
+underline = 1
+
+[node name="div" type="Label" parent="ascii_patch" unique_id=119801992]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 67.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ui4bp")
+text = "------------------------------------------------------------"
+horizontal_alignment = 1
+
+[node name="advisors" type="ScrollContainer" parent="ascii_patch" unique_id=1023407274]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 102.0
+offset_right = -9.25
+offset_bottom = -9.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qieeg")
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ascii_patch/advisors" unique_id=616055273]
+layout_mode = 2
+theme_override_constants/separation = 53
+
+[node name="vizier" type="Control" parent="ascii_patch/advisors/VBoxContainer" unique_id=661862052]
+custom_minimum_size = Vector2(540, 96)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="ascii_patch/advisors/VBoxContainer/vizier" unique_id=1084799813]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 97.625
+grow_vertical = 2
+texture = ExtResource("5_enpcn")
+expand_mode = 1
+
+[node name="name" type="Label" parent="ascii_patch/advisors/VBoxContainer/vizier" unique_id=29677356]
+layout_mode = 0
+offset_left = 116.625
+offset_top = 3.0
+offset_right = 224.625
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ui4bp")
+theme_override_font_sizes/font_size = 32
+text = "Vizier"
+
+[node name="opinion" type="Label" parent="ascii_patch/advisors/VBoxContainer/vizier" unique_id=89312251]
+layout_mode = 0
+offset_left = 115.625
+offset_top = 41.0
+offset_right = 536.625
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ui4bp")
+theme_override_font_sizes/font_size = 13
+text = "The vizier is happy. or maybe not. Is it 'the' vizier, or is Vizier like, some guy's name. I don't know. I'm the vizier, though."
+autowrap_mode = 2
+
+[node name="dramaturge" type="Control" parent="ascii_patch/advisors/VBoxContainer" unique_id=654762861]
+custom_minimum_size = Vector2(540, 96)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="ascii_patch/advisors/VBoxContainer/dramaturge" unique_id=1395446974]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 97.625
+grow_vertical = 2
+texture = ExtResource("6_tvlb5")
+expand_mode = 1
+
+[node name="name" type="Label" parent="ascii_patch/advisors/VBoxContainer/dramaturge" unique_id=707286775]
+layout_mode = 0
+offset_left = 116.625
+offset_top = 3.0
+offset_right = 224.625
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ui4bp")
+theme_override_font_sizes/font_size = 32
+text = "Dramaturge"
+
+[node name="opinion" type="Label" parent="ascii_patch/advisors/VBoxContainer/dramaturge" unique_id=1942793811]
+layout_mode = 0
+offset_left = 115.625
+offset_top = 41.0
+offset_right = 536.625
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ui4bp")
+theme_override_font_sizes/font_size = 13
+text = "I'm the dramaturge. Totally not Twilight Sparkle. Totallyyyyy. I will tell you what the government in Cardiaque expects. Which is a completely different place to Equestria. Seriously."
+autowrap_mode = 2
+
+[node name="attache" type="Control" parent="ascii_patch/advisors/VBoxContainer" unique_id=940317764]
+custom_minimum_size = Vector2(540, 96)
+layout_mode = 2
+
+[node name="icon" type="TextureRect" parent="ascii_patch/advisors/VBoxContainer/attache" unique_id=25425429]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 97.625
+grow_vertical = 2
+texture = ExtResource("7_qplvd")
+expand_mode = 1
+
+[node name="name" type="Label" parent="ascii_patch/advisors/VBoxContainer/attache" unique_id=1450684899]
+layout_mode = 0
+offset_left = 116.625
+offset_top = 3.0
+offset_right = 224.625
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ui4bp")
+theme_override_font_sizes/font_size = 32
+text = "Attache"
+
+[node name="opinion" type="Label" parent="ascii_patch/advisors/VBoxContainer/attache" unique_id=660490113]
+layout_mode = 0
+offset_left = 115.625
+offset_top = 41.0
+offset_right = 536.625
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ui4bp")
+theme_override_font_sizes/font_size = 13
+text = "Hey, check out this e-mail 'Attache'ment. Heh. Anyway did you ever thought about that Militant Composition?"
+autowrap_mode = 2
+
+[connection signal="button_down" from="ascii_patch/header/drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="ascii_patch/header/drag" to="." method="_on_drag_button_up"]
+[connection signal="pressed" from="ascii_patch/x" to="." method="_on_x_pressed"]
