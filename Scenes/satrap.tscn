@@ -81,16 +81,6 @@ shader_parameter/diffusion = 0.185
 shader_parameter/vinnette_alpla = 0.0
 shader_parameter/vinnette_inner_radius = 1000000.0
 
-[sub_resource type="GDScript" id="GDScript_af5lw"]
-script/source = "extends Label
-
-func _ready():
-	pass
-	
-func _process(delta):
-	text = \"Food: \" + str(int(Ticks.resources[\"food\"]))
-"
-
 [node name="satrap" type="Control" unique_id=1710664835]
 layout_mode = 3
 anchors_preset = 15
@@ -390,12 +380,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="food" type="Label" parent="CanvasLayer" unique_id=692823615]
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("3_y32xm")
-script = SubResource("GDScript_af5lw")
 
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
 visible = false
