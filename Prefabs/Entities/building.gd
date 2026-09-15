@@ -30,6 +30,9 @@ func _input(event):
 				if event.button_index == MOUSE_BUTTON_LEFT:
 					get_tree().get_meta("inspect_window").click_building(self)
 					get_tree().get_meta("tooltip").add_text("")
+				elif event.button_index == MOUSE_BUTTON_RIGHT:
+					get_tree().get_meta("action_window").click_building(self)
+					get_tree().get_meta("tooltip").add_text("")
 
 func _on_mouse_entered() -> void:
 	hovering = true

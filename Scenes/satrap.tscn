@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bskbhgy6al1hl" path="res://Scenes/tooltip.gd" id="3_yg0qq"]
 [ext_resource type="Script" uid="uid://cvgypix1816iu" path="res://Scenes/world.gd" id="4_iv1gs"]
 [ext_resource type="PackedScene" uid="uid://i8ul7v3atdxf" path="res://Prefabs/Entities/Windows/inspect_window.tscn" id="5_yg0qq"]
+[ext_resource type="PackedScene" uid="uid://w56ex1jngn1o" path="res://Prefabs/Entities/Windows/action_window.tscn" id="6_malts"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
 
 [sub_resource type="Shader" id="Shader_u8pq8"]
@@ -408,6 +409,8 @@ theme_override_fonts/font = ExtResource("3_y32xm")
 script = SubResource("GDScript_af5lw")
 
 [node name="inspect_window" parent="CanvasLayer" unique_id=1843048362 instance=ExtResource("5_yg0qq")]
+
+[node name="action_window" parent="CanvasLayer" unique_id=462450761 instance=ExtResource("6_malts")]
 
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
 visible = false
