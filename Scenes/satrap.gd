@@ -5,7 +5,7 @@ extends Control
 
 const W := 1440.0
 const H := 1080.0
-const PANEL_X := W - 448.0
+const PANEL_X := W - 448.0 - 64
 const FONT_PATH := "res://Graphics/Fonts/MorePerfectDOSVGA.ttf"
 const GREEN := Color(0, 0.95, 0.35)
 const DIM := Color(0, 0.55, 0.25)
@@ -127,7 +127,7 @@ func _build_top_bar() -> void:
 	bar.add_theme_stylebox_override("panel", _mk_stylebox(PANEL_BG, DIM))
 	bar.position = Vector2(0, 0)
 	bar.size = Vector2(W, 40)
-	add_child(bar)
+	$CanvasLayer.add_child(bar)
 	var hb := HBoxContainer.new()
 	hb.add_theme_constant_override("separation", 18)
 	bar.add_child(hb)
@@ -149,7 +149,7 @@ func _build_panel() -> void:
 	panel = _mk_panel()
 	panel.position = Vector2(PANEL_X, 48)
 	panel.size = Vector2(W - PANEL_X - 8, H - 48 - 74)
-	add_child(panel)
+	$CanvasLayer.add_child(panel)
 	var vb := VBoxContainer.new()
 	vb.add_theme_constant_override("separation", 6)
 	panel.add_child(vb)

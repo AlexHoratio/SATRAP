@@ -7,19 +7,25 @@ var cond_buttons := {}
 
 func _ready() -> void:
 	font = load("res://Graphics/Fonts/MorePerfectDOSVGA.ttf")
-	_build_conditions()
 
 func _build_conditions() -> void:
+	# clear any previous panel so rebuilds don't stack
+	for child in get_children():
+		if child is CenterContainer:
+			child.queue_free()
+	# center a self-sizing panel so it always fits its contents
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(center)
 	var box := PanelContainer.new()
+	box.custom_minimum_size = Vector2(880, 0)
 	var s := StyleBoxFlat.new()
 	s.bg_color = Color(0.0, 0.05, 0.02, 0.9)
 	s.border_color = Color(0, 0.6, 0.25)
 	s.set_border_width_all(1)
-	s.set_content_margin_all(12)
+	s.set_content_margin_all(16)
 	box.add_theme_stylebox_override("panel", s)
-	box.position = Vector2(200, 300)
-	box.size = Vector2(1040, 520)
-	add_child(box)
+	center.add_child(box)
 	var vb := VBoxContainer.new()
 	vb.add_theme_constant_override("separation", 10)
 	box.add_child(vb)
@@ -51,7 +57,7 @@ func _build_conditions() -> void:
 		var desc := Label.new()
 		desc.text = st.desc
 		desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		desc.custom_minimum_size = Vector2(640, 0)
+		desc.custom_minimum_size = Vector2(540, 0)
 		desc.add_theme_font_override("font", font)
 		desc.add_theme_font_size_override("font_size", 13)
 		desc.add_theme_color_override("font_color", Color(0, 0.7, 0.35))
@@ -68,7 +74,23 @@ func _build_conditions() -> void:
 		cont.add_theme_color_override("font_hover_color", Color(1, 1, 0.8))
 		cont.pressed.connect(_continue_pressed)
 		vb.add_child(cont)
+
+	# confirm button — actually loads into the game
+	var go := Button.new()
+	go.text = "> START GAME <"
+	go.flat = true
+	go.add_theme_font_override("font", font)
+	go.add_theme_font_size_override("font_size", 18)
+	go.add_theme_color_override("font_color", Color(1, 1, 0.85))
+	go.add_theme_color_override("font_hover_color", Color(1, 1, 0.8))
+	go.add_theme_color_override("font_pressed_color", Color(1, 1, 0.8))
+	go.pressed.connect(_start_pressed)
+	vb.add_child(go)
 	_highlight()
+
+func _start_pressed() -> void:
+	Game.start_game(selected)
+	get_tree().change_scene_to_file("res://Scenes/satrap.tscn")
 
 func _select(sid: String) -> void:
 	selected = sid
@@ -79,8 +101,7 @@ func _highlight() -> void:
 		cond_buttons[sid].text = ("> " if sid == selected else "   ") + Data.STARTS[sid].name.to_upper()
 
 func _on_play_pressed() -> void:
-	Game.start_game(selected)
-	get_tree().change_scene_to_file("res://Scenes/satrap.tscn")
+	_build_conditions()
 
 func _continue_pressed() -> void:
 	get_tree().set_meta("satrap_continue", true)

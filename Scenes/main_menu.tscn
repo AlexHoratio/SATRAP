@@ -688,6 +688,7 @@ theme_override_font_sizes/font_size = 48
 text = "> Exit <"
 
 [node name="crt" type="ColorRect" parent="." unique_id=1217443529]
+visible = false
 material = SubResource("ShaderMaterial_af5lw")
 layout_mode = 1
 anchors_preset = 15

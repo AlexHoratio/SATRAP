@@ -380,7 +380,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
 visible = false
 position = Vector2(722, 516)

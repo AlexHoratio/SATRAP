@@ -36,13 +36,13 @@ const BUILDINGS := {
 	"admin": {
 		"name": "Administrative Building",
 		"cost": 0,
-		"sprite": "res://Graphics/Entities/Buildings/admin1.png",
+		"sprite": "res://Graphics/Entities/Sprites/Administrative2.png",
 		"desc": "From here you govern the Satrapy. If it falls, so do you.",
 	},
 	"civil": {
 		"name": "Civil Building",
 		"cost": 20,
-		"sprite": "res://Graphics/Entities/Buildings/civil2.png",
+		"sprite": "res://Graphics/Entities/Sprites/Civil.png",
 		"capacity": 150,
 		"desc": "Housing and basic amenities for 150 citizens. If population exceeds housing capacity, people will get angry.",
 	},

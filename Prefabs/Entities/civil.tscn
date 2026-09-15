@@ -2,15 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://c6gatc2wlssfe" path="res://Prefabs/Entities/building.tscn" id="1_frv1a"]
 [ext_resource type="Script" uid="uid://c1k01eku36n3y" path="res://Prefabs/Entities/civil.gd" id="2_2gubu"]
-[ext_resource type="Texture2D" uid="uid://ccoi5t8ycn8vv" path="res://Graphics/Entities/Buildings/civil2.png" id="3_2gubu"]
+[ext_resource type="Texture2D" uid="uid://dr8xixatwevf5" path="res://Graphics/Entities/Sprites/Civil.png" id="3_2gubu"]
 
 [node name="building" unique_id=1304179753 instance=ExtResource("1_frv1a")]
 script = ExtResource("2_2gubu")
-building_name = "Civilian"
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=277373365]
 texture_filter = 1
-scale = Vector2(0.126, 0.126)
 texture = ExtResource("3_2gubu")
 
 [node name="Button" type="Button" parent="." index="1" unique_id=525947965]
