@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://i8ul7v3atdxf"]
+
+[ext_resource type="Script" uid="uid://c780um0bohvnu" path="res://Prefabs/Entities/Windows/inspect_window.gd" id="1_2l3vt"]
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="1_cgvh5"]
+[ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="2_ooyl3"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_ooyl3"]
+
+[node name="inspect_window" type="Control" unique_id=1843048362]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_2l3vt")
+
+[node name="ascii_patch" parent="." unique_id=58068374 instance=ExtResource("1_cgvh5")]
+clip_children = 2
+layout_mode = 0
+offset_right = 194.0
+offset_bottom = 71.89041
+texture = ExtResource("2_ooyl3")
+
+[node name="building_name" type="Label" parent="ascii_patch" unique_id=926989190]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_ooyl3")
+text = "Civilian Building"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="details" type="RichTextLabel" parent="ascii_patch" unique_id=1574732183]
+layout_mode = 1
+offset_left = 13.0
+offset_top = 39.0
+offset_right = 64.0
+offset_bottom = 95.0
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_ooyl3")
+theme_override_font_sizes/normal_font_size = 13
+bbcode_enabled = true
+text = "> 99/100 (pop/cap)"
+fit_content = true
+scroll_active = false
