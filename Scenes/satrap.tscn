@@ -6,7 +6,9 @@
 [ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_y32xm"]
 [ext_resource type="Script" uid="uid://bskbhgy6al1hl" path="res://Scenes/tooltip.gd" id="3_yg0qq"]
 [ext_resource type="Script" uid="uid://cvgypix1816iu" path="res://Scenes/world.gd" id="4_iv1gs"]
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="5_83ioq"]
 [ext_resource type="PackedScene" uid="uid://i8ul7v3atdxf" path="res://Prefabs/Entities/Windows/inspect_window.tscn" id="5_yg0qq"]
+[ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="6_0a1jj"]
 [ext_resource type="PackedScene" uid="uid://w56ex1jngn1o" path="res://Prefabs/Entities/Windows/action_window.tscn" id="6_malts"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
 
@@ -396,11 +398,60 @@ color = Color(0, 0, 0, 1)
 
 [node name="top_bar" type="Control" parent="CanvasLayer" unique_id=304437217]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 45.0
+grow_horizontal = 2
+
+[node name="ascii_patch" parent="CanvasLayer/top_bar" unique_id=58068374 instance=ExtResource("5_83ioq")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -30.0
+offset_right = 0.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0a1jj")
+
+[node name="date" type="Label" parent="CanvasLayer/top_bar/ascii_patch" unique_id=624409951]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 284.0
+offset_bottom = -12.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+text = "Year 1 - 1st of January"
+
+[node name="playpause" type="LinkButton" parent="CanvasLayer/top_bar/ascii_patch" unique_id=1216559493]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 37.0
+offset_right = 378.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0.8745098, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+text = "> PAUSED <"
+underline = 1
+
+[node name="speed" type="LinkButton" parent="CanvasLayer/top_bar/ascii_patch" unique_id=327771243]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 37.0
+offset_right = 454.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0, 0.8745098, 0, 1)
+theme_override_fonts/font = ExtResource("3_y32xm")
+text = "x1.0"
+underline = 1
 
 [node name="food" type="Label" parent="CanvasLayer/top_bar" unique_id=692823615]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -409,8 +460,10 @@ theme_override_fonts/font = ExtResource("3_y32xm")
 script = SubResource("GDScript_af5lw")
 
 [node name="inspect_window" parent="CanvasLayer" unique_id=1843048362 instance=ExtResource("5_yg0qq")]
+visible = false
 
 [node name="action_window" parent="CanvasLayer" unique_id=462450761 instance=ExtResource("6_malts")]
+visible = false
 
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
 visible = false
