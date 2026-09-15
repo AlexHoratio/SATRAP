@@ -86,6 +86,89 @@ shader_parameter/diffusion = 0.185
 shader_parameter/vinnette_alpla = 0.0
 shader_parameter/vinnette_inner_radius = 1000000.0
 
+[sub_resource type="GDScript" id="GDScript_83ioq"]
+script/source = "extends Label
+
+func _ready():
+	pass
+	
+func _process(delta):
+	update_text()
+	
+	self_modulate = Color.RED if Ticks.game_paused else Color.GREEN
+	
+func update_text() -> void:
+	var datetime = Ticks.get_date_string()
+	var day_string = str(datetime[\"day\"])
+			
+	if str(datetime[\"day\"]).substr(0, 1) == \"1\":
+		day_string += \"th\"
+	else:
+		match str(datetime[\"day\"]).substr(len(str(datetime[\"day\"])) - 1):
+			\"1\":
+				day_string += \"st\"
+			\"2\":
+				day_string += \"nd\"
+			\"3\":
+				day_string += \"rd\"
+			_:
+				day_string += \"th\"
+		
+			
+	var month_string = \"\"
+	match datetime[\"month\"]:
+		1:
+			month_string = \"January\"
+		2:
+			month_string = \"February\"
+		3:
+			month_string = \"March\"
+		4:
+			month_string = \"April\"
+		5:
+			month_string = \"May\"
+		6:
+			month_string = \"June\"
+		7:
+			month_string = \"July\"
+		8:
+			month_string = \"August\"
+		9:
+			month_string = \"September\"
+		10:
+			month_string = \"October\"
+		11:
+			month_string = \"November\"
+		12:
+			month_string = \"December\"
+		_:
+			month_string = \"some bs month I never herad of bearfore\"
+			
+	text = \"Year \" + str(datetime[\"year\"] - 1969) + \" - \" + day_string + \" of \" + month_string
+"
+
+[sub_resource type="GDScript" id="GDScript_0a1jj"]
+script/source = "extends LinkButton
+
+func _process(delta):
+	text = \"> PAUSED <\" if Ticks.game_paused else \"> PLAYING <\"
+	self_modulate = Color.RED if Ticks.game_paused else Color.GREEN
+
+func _on_pressed():
+	Ticks.toggle_pause()
+"
+
+[sub_resource type="GDScript" id="GDScript_sncgy"]
+script/source = "extends LinkButton
+
+func _process(delta):
+	text = \"x\" + str(float(Ticks.speed_multiplier))
+	self_modulate = Color.RED if Ticks.game_paused else Color.GREEN
+	
+func _on_pressed():
+	Ticks.increment_speed()
+"
+
 [sub_resource type="GDScript" id="GDScript_af5lw"]
 script/source = "extends Label
 
@@ -416,6 +499,7 @@ grow_vertical = 2
 texture = ExtResource("6_0a1jj")
 
 [node name="date" type="Label" parent="CanvasLayer/top_bar/ascii_patch" unique_id=624409951]
+self_modulate = Color(0, 1, 0, 1)
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -424,9 +508,9 @@ offset_top = 36.0
 offset_right = 284.0
 offset_bottom = -12.0
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_y32xm")
 text = "Year 1 - 1st of January"
+script = SubResource("GDScript_83ioq")
 
 [node name="playpause" type="LinkButton" parent="CanvasLayer/top_bar/ascii_patch" unique_id=1216559493]
 layout_mode = 0
@@ -434,10 +518,10 @@ offset_left = 288.0
 offset_top = 37.0
 offset_right = 378.0
 offset_bottom = 53.0
-theme_override_colors/font_color = Color(0, 0.8745098, 0, 1)
 theme_override_fonts/font = ExtResource("3_y32xm")
 text = "> PAUSED <"
 underline = 1
+script = SubResource("GDScript_0a1jj")
 
 [node name="speed" type="LinkButton" parent="CanvasLayer/top_bar/ascii_patch" unique_id=327771243]
 layout_mode = 0
@@ -445,10 +529,10 @@ offset_left = 418.0
 offset_top = 37.0
 offset_right = 454.0
 offset_bottom = 53.0
-theme_override_colors/font_color = Color(0, 0.8745098, 0, 1)
 theme_override_fonts/font = ExtResource("3_y32xm")
 text = "x1.0"
 underline = 1
+script = SubResource("GDScript_sncgy")
 
 [node name="food" type="Label" parent="CanvasLayer/top_bar" unique_id=692823615]
 visible = false
@@ -523,4 +607,6 @@ script = ExtResource("7_42a5o")
 [connection signal="mouse_entered" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/top_bar/ascii_patch/playpause" to="CanvasLayer/top_bar/ascii_patch/playpause" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/top_bar/ascii_patch/speed" to="CanvasLayer/top_bar/ascii_patch/speed" method="_on_pressed"]
 [connection signal="pressed" from="asdfasd" to="." method="_on_asdfasd_pressed"]
