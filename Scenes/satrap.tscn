@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cyvbi81ii6bi6" path="res://Graphics/images.jpg" id="1_fm0yt"]
 [ext_resource type="Script" uid="uid://cbtut4sbpxi6m" path="res://Scenes/satrap.gd" id="1_vfb65"]
+[ext_resource type="Script" uid="uid://be68x2fittjf3" path="res://Scenes/construction_util_button.gd" id="3_0a1jj"]
 [ext_resource type="Script" uid="uid://df5oud1b05y2d" path="res://Scenes/local_approval_button.gd" id="3_42a5o"]
 [ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_y32xm"]
 [ext_resource type="Script" uid="uid://bskbhgy6al1hl" path="res://Scenes/tooltip.gd" id="3_yg0qq"]
@@ -11,6 +12,23 @@
 [ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="6_0a1jj"]
 [ext_resource type="PackedScene" uid="uid://w56ex1jngn1o" path="res://Prefabs/Entities/Windows/action_window.tscn" id="6_malts"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
+[ext_resource type="Script" uid="uid://87aq5xlu747e" path="res://Scenes/construction_window.gd" id="10_ea3fu"]
+[ext_resource type="Texture2D" uid="uid://dr8xixatwevf5" path="res://Graphics/Entities/Sprites/Civil.png" id="10_sncgy"]
+[ext_resource type="PackedScene" uid="uid://b13520h07qp1x" path="res://Prefabs/CanvasLayer/g9patch.tscn" id="11_5ytj4"]
+[ext_resource type="Texture2D" uid="uid://dxpl8opi2t1bi" path="res://Graphics/Entities/outpost.png" id="12_fl5u0"]
+[ext_resource type="Texture2D" uid="uid://gn62s57iir7y" path="res://Graphics/Entities/railway.png" id="13_5ytj4"]
+
+[sub_resource type="GDScript" id="GDScript_5ytj4"]
+script/source = "extends Button
+
+func _process(delta):
+	position = get_node(\"../Camera2D\").position - Vector2(1000, 1000)
+
+
+func _on_pressed():
+	get_tree().get_meta(\"inspect_window\").forget_building()
+	get_tree().get_meta(\"action_window\").forget_building()
+"
 
 [sub_resource type="Shader" id="Shader_u8pq8"]
 code = "shader_type canvas_item;
@@ -188,6 +206,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vfb65")
 
+[node name="background" type="Button" parent="." unique_id=1626926748]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -291.0
+offset_top = -217.0
+offset_right = 329.0
+offset_bottom = 297.0
+grow_horizontal = 2
+grow_vertical = 2
+button_mask = 3
+script = SubResource("GDScript_5ytj4")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1265064259]
 
 [node name="utilities" type="Control" parent="CanvasLayer" unique_id=2082412739]
@@ -217,6 +250,7 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_y32xm")
 theme_override_font_sizes/font_size = 48
+script = ExtResource("3_0a1jj")
 
 [node name="text" type="Label" parent="CanvasLayer/utilities/construction" unique_id=1487414732]
 layout_mode = 1
@@ -543,11 +577,148 @@ theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_y32xm")
 script = SubResource("GDScript_af5lw")
 
-[node name="inspect_window" parent="CanvasLayer" unique_id=1843048362 instance=ExtResource("5_yg0qq")]
-visible = false
+[node name="construction_window" type="Control" parent="CanvasLayer" unique_id=313212039]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("10_ea3fu")
 
-[node name="action_window" parent="CanvasLayer" unique_id=462450761 instance=ExtResource("6_malts")]
-visible = false
+[node name="ascii_patch" parent="CanvasLayer/construction_window" unique_id=1904701530 instance=ExtResource("5_83ioq")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = -143.0
+offset_right = -32.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("6_0a1jj")
+
+[node name="buildings" type="Control" parent="CanvasLayer/construction_window/ascii_patch" unique_id=303436332]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="outpost" type="Control" parent="CanvasLayer/construction_window/ascii_patch/buildings" unique_id=268583221]
+anchors_preset = 0
+offset_left = 567.0
+offset_top = 14.0
+offset_right = 615.0
+offset_bottom = 62.0
+
+[node name="g9patch" parent="CanvasLayer/construction_window/ascii_patch/buildings/outpost" unique_id=968642944 instance=ExtResource("11_5ytj4")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_left = -2.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/construction_window/ascii_patch/buildings/outpost" unique_id=1534565268]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("12_fl5u0")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="outpost" type="Button" parent="CanvasLayer/construction_window/ascii_patch/buildings/outpost" unique_id=330313333]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="civil" type="Control" parent="CanvasLayer/construction_window/ascii_patch/buildings" unique_id=1167417648]
+anchors_preset = 0
+offset_left = 619.0
+offset_top = 14.0
+offset_right = 667.0
+offset_bottom = 62.0
+
+[node name="g9patch" parent="CanvasLayer/construction_window/ascii_patch/buildings/civil" unique_id=15482528 instance=ExtResource("11_5ytj4")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_top = 1.0
+offset_right = 0.0
+offset_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/construction_window/ascii_patch/buildings/civil" unique_id=1942730750]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("10_sncgy")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="civil" type="Button" parent="CanvasLayer/construction_window/ascii_patch/buildings/civil" unique_id=739802454]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="railway" type="Control" parent="CanvasLayer/construction_window/ascii_patch/buildings" unique_id=679310048]
+anchors_preset = 0
+offset_left = 673.0
+offset_top = 14.0
+offset_right = 721.0
+offset_bottom = 62.0
+
+[node name="g9patch" parent="CanvasLayer/construction_window/ascii_patch/buildings/railway" unique_id=1363220012 instance=ExtResource("11_5ytj4")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_top = 1.0
+offset_right = 0.0
+offset_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/construction_window/ascii_patch/buildings/railway" unique_id=1029157180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("13_5ytj4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="railway" type="Button" parent="CanvasLayer/construction_window/ascii_patch/buildings/railway" unique_id=915874255]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
 
 [node name="Images" type="Sprite2D" parent="." unique_id=863690617]
 visible = false
@@ -598,12 +769,25 @@ script = ExtResource("4_iv1gs")
 
 [node name="buildings" type="Node2D" parent="world" unique_id=1515735873]
 
+[node name="action_window" parent="." unique_id=462450761 instance=ExtResource("6_malts")]
+visible = false
+z_index = 106
+layout_mode = 1
+
+[node name="inspect_window" parent="." unique_id=1843048362 instance=ExtResource("5_yg0qq")]
+visible = false
+layout_mode = 1
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=62294094]
 position = Vector2(720, 540)
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 script = ExtResource("7_42a5o")
 
+[connection signal="pressed" from="background" to="background" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/utilities/construction" to="CanvasLayer/utilities/construction" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/utilities/construction" to="CanvasLayer/utilities/construction" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/utilities/construction" to="CanvasLayer/utilities/construction" method="_on_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_pressed"]

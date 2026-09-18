@@ -15,6 +15,8 @@ func _ready():
 	if has_node("Button"):
 		$Button.mouse_entered.connect(_on_mouse_entered)
 		$Button.mouse_exited.connect(_on_mouse_exited)
+		$Button.gui_input.connect(button_input)
+		
 		
 	if has_node("Sprite2D"):
 		base_sprite_scale = $Sprite2D.scale
@@ -23,7 +25,7 @@ func _process(delta):
 	if has_node("Sprite2D"):
 		$Sprite2D.scale = lerp($Sprite2D.scale, (base_sprite_scale * 1.1) if hovering else base_sprite_scale, 20 * delta)
 
-func _input(event):
+func button_input(event) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if has_node("Button"):
 			if $Button.get_global_rect().has_point(get_global_mouse_position()):
@@ -41,4 +43,12 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	hovering = false
 	get_tree().get_meta("tooltip").add_text("")
-	get_tree().get_meta("inspect_window").forget_building()
+	#get_tree().get_meta("inspect_window").forget_building()
+
+func left_mouse_pressed() -> void:
+	get_tree().get_meta("inspect_window").click_building(self)
+	get_tree().get_meta("tooltip").add_text("")
+	
+func right_mouse_pressed() -> void:
+	get_tree().get_meta("action_window").click_building(self)
+	get_tree().get_meta("tooltip").add_text("")

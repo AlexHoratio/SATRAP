@@ -11,9 +11,9 @@ func _ready():
 func _process(delta):
 	$ascii_patch.size.y = lerp($ascii_patch.size.y, final_size.y, 15*delta)
 	
-	if visible:
-		if get_global_mouse_position().distance_to($ascii_patch.global_position + $ascii_patch.size/2.0) > 300:
-			forget_building()
+	#if visible:
+		#if get_global_mouse_position().distance_to($ascii_patch.global_position + $ascii_patch.size/2.0) > 300:
+			#forget_building()
 	
 func click_building(building) -> void:
 	current_building = building

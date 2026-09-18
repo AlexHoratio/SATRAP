@@ -17,4 +17,8 @@ func _process(delta):
 	if Input.is_action_pressed("down"):
 		movement_vector.y += 1
 		
+	if movement_vector != Vector2(0, 0):
+		get_tree().get_meta("inspect_window").forget_building()
+		get_tree().get_meta("action_window").forget_building()
+		
 	position += movement_vector * camera_speed * delta

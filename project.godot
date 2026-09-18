@@ -13,7 +13,7 @@ config_version=5
 config/name="SATRAP"
 run/main_scene="uid://6h6jg2grc2nm"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cjyyksoqbr2ta"
 
 [autoload]
 
