@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cw56dfpx0qx5d" path="res://Scenes/population_button.gd" id="6_fl5u0"]
 [ext_resource type="PackedScene" uid="uid://w56ex1jngn1o" path="res://Prefabs/Entities/Windows/action_window.tscn" id="6_malts"]
 [ext_resource type="Script" uid="uid://cuyko0sfxo8mf" path="res://Scenes/top_bar.gd" id="6_sncgy"]
+[ext_resource type="Script" uid="uid://xh8fwuf8m4k1" path="res://Scenes/resources_button.gd" id="7_5ytj4"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
 
 [sub_resource type="GDScript" id="GDScript_5ytj4"]
@@ -419,6 +420,7 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_y32xm")
 theme_override_font_sizes/font_size = 48
+script = ExtResource("7_5ytj4")
 
 [node name="text" type="Label" parent="CanvasLayer/info/resources" unique_id=1193692819]
 layout_mode = 1
@@ -721,6 +723,9 @@ script = ExtResource("7_42a5o")
 [connection signal="mouse_entered" from="CanvasLayer/info/population" to="CanvasLayer/info/population" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/info/population" to="CanvasLayer/info/population" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/info/population" to="CanvasLayer/info/population" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/info/resources" to="CanvasLayer/info/resources" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/info/resources" to="CanvasLayer/info/resources" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/info/resources" to="CanvasLayer/info/resources" method="_on_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_pressed"]

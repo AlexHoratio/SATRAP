@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://berfflt4cirjj"]
+
+[ext_resource type="Script" uid="uid://dikn3vcb23kcy" path="res://Prefabs/Entities/Windows/resource_viewer.gd" id="1_hn3my"]
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="2_4nue1"]
+[ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="3_a5xk4"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="4_vdakv"]
+
+[node name="resource_viewer" type="Control" unique_id=290430879]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_hn3my")
+
+[node name="ascii_patch" parent="." unique_id=58068374 instance=ExtResource("2_4nue1")]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 718.0
+offset_right = 1385.0
+offset_bottom = 1017.0
+texture = ExtResource("3_a5xk4")
+
+[node name="header" type="Control" parent="ascii_patch" unique_id=1935119879]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 82.5
+grow_horizontal = 2
+
+[node name="drag" type="Button" parent="ascii_patch/header" unique_id=20769597]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="title" type="Label" parent="ascii_patch/header" unique_id=948575574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_vdakv")
+theme_override_font_sizes/font_size = 32
+text = "Resources"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="x" type="LinkButton" parent="ascii_patch" unique_id=1788936028]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.625
+offset_top = 26.5
+offset_right = -31.625
+offset_bottom = 58.5
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_vdakv")
+theme_override_font_sizes/font_size = 32
+text = "X"
+underline = 1
+
+[node name="div" type="Label" parent="ascii_patch" unique_id=846634507]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 67.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_vdakv")
+text = "------------------------------------------------------"
+horizontal_alignment = 1
+
+[node name="breakdown_l" type="RichTextLabel" parent="ascii_patch" unique_id=807729552]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0006513986
+anchor_right = 0.0006513986
+offset_left = 26.665842
+offset_top = 94.000015
+offset_right = 477.44556
+offset_bottom = 270.0
+theme_override_fonts/normal_font = ExtResource("4_vdakv")
+bbcode_enabled = true
+text = "[color=#0f0]Money:
+
+[color=#0f0]Food:
+
+[color=#0f0]Basic Civilian Goods: 
+
+[color=#0f0]Luxury Civilian Goods:
+
+[color=#0f0]Basic Military Equipment:
+
+[color=#0f0]Specialist Military Equipment:"
+fit_content = true
+scroll_active = false
+metadata/_edit_use_anchors_ = true
+
+[node name="breakdown_r" type="RichTextLabel" parent="ascii_patch" unique_id=2069862919]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0006513986
+anchor_right = 0.0006513986
+offset_left = 26.665842
+offset_top = 94.000015
+offset_right = 477.44556
+offset_bottom = 270.0
+theme_override_fonts/normal_font = ExtResource("4_vdakv")
+bbcode_enabled = true
+text = "[color=#0f0]29,439 [color=#00ff00ff](+398/s)
+
+[color=#0f0]124 [color=#ff0000ff](-3/s)
+
+[color=#0f0]313 [color=#00ff00ff](+29/s)
+
+[color=#0f0]11 [color=#00ff00ff](+1/s)
+
+[color=#0f0]2 [color=#00ff0055](+0/s)
+
+[color=#00ff0055]0 [color=#00ff0055](+0/s)"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="ascii_patch/header/drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="ascii_patch/header/drag" to="." method="_on_drag_button_up"]
+[connection signal="pressed" from="ascii_patch/x" to="." method="_on_x_pressed"]
