@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://c0vocfitegx8r"]
+
+[ext_resource type="Script" uid="uid://cdvucuypag46m" path="res://Prefabs/Entities/Windows/population_viewer.gd" id="1_gwe34"]
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="1_kvasm"]
+[ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="2_gwe34"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_kvasm"]
+
+[node name="population_viewer" type="Control" unique_id=290430879]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_gwe34")
+
+[node name="ascii_patch" parent="." unique_id=58068374 instance=ExtResource("1_kvasm")]
+layout_mode = 0
+offset_left = 945.0
+offset_top = 740.0
+offset_right = 1288.0
+offset_bottom = 1016.0
+texture = ExtResource("2_gwe34")
+
+[node name="header" type="Control" parent="ascii_patch" unique_id=1935119879]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 82.5
+grow_horizontal = 2
+
+[node name="drag" type="Button" parent="ascii_patch/header" unique_id=20769597]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="title" type="Label" parent="ascii_patch/header" unique_id=948575574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_kvasm")
+theme_override_font_sizes/font_size = 32
+text = "Population"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="x" type="LinkButton" parent="ascii_patch" unique_id=1788936028]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.625
+offset_top = 26.5
+offset_right = -31.625
+offset_bottom = 58.5
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_kvasm")
+theme_override_font_sizes/font_size = 32
+text = "X"
+underline = 1
+
+[node name="div" type="Label" parent="ascii_patch" unique_id=846634507]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 67.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_kvasm")
+text = "-----------------------------------"
+horizontal_alignment = 1
+
+[node name="breakdown_l" type="RichTextLabel" parent="ascii_patch" unique_id=807729552]
+layout_mode = 0
+anchor_left = 0.051980197
+anchor_top = 0.32971016
+anchor_right = 0.9306931
+anchor_bottom = 0.9927536
+theme_override_fonts/normal_font = ExtResource("3_kvasm")
+bbcode_enabled = true
+text = "[color=#0f0]Avantists:
+
+[color=#0f0]Imagists:
+
+[color=#0f0]Fragmentists: 
+
+[color=#0f0]Other:"
+metadata/_edit_use_anchors_ = true
+
+[node name="breakdown_r" type="RichTextLabel" parent="ascii_patch" unique_id=2069862919]
+layout_mode = 0
+anchor_left = 0.051980197
+anchor_top = 0.32971016
+anchor_right = 0.9306931
+anchor_bottom = 0.9927536
+theme_override_fonts/normal_font = ExtResource("3_kvasm")
+bbcode_enabled = true
+text = "[color=#0f0]294 [color=#00ff0055](94%)
+
+[color=#0f0]2 [color=#00ff0055](1%)
+
+[color=#0f0]15 [color=#00ff0055](3%)
+
+[color=#0f0]12 [color=#00ff0055](2%)"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="div2" type="Label" parent="ascii_patch" unique_id=1837074304]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -62.0
+offset_right = 342.0
+offset_bottom = -46.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_kvasm")
+text = "-----------------------------------"
+horizontal_alignment = 1
+
+[node name="total_l" type="RichTextLabel" parent="ascii_patch" unique_id=120870317]
+layout_mode = 0
+anchor_left = 0.051980197
+anchor_top = 0.8731884
+anchor_right = 0.9306931
+anchor_bottom = 0.9927536
+offset_top = 1.5258789e-05
+theme_override_fonts/normal_font = ExtResource("3_kvasm")
+bbcode_enabled = true
+text = "[color=#0f0]Total:"
+metadata/_edit_use_anchors_ = true
+
+[node name="total_r" type="RichTextLabel" parent="ascii_patch" unique_id=69908581]
+layout_mode = 0
+anchor_left = 0.051980197
+anchor_top = 0.8731884
+anchor_right = 0.9306931
+anchor_bottom = 0.9927536
+offset_top = 1.5258789e-05
+theme_override_fonts/normal_font = ExtResource("3_kvasm")
+bbcode_enabled = true
+text = "[color=#0f0]320 citizens"
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="ascii_patch/header/drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="ascii_patch/header/drag" to="." method="_on_drag_button_up"]
+[connection signal="pressed" from="ascii_patch/x" to="." method="_on_x_pressed"]
