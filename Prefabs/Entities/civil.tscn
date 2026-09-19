@@ -2,20 +2,41 @@
 
 [ext_resource type="PackedScene" uid="uid://c6gatc2wlssfe" path="res://Prefabs/Entities/building.tscn" id="1_frv1a"]
 [ext_resource type="Script" uid="uid://c1k01eku36n3y" path="res://Prefabs/Entities/civil.gd" id="2_2gubu"]
-[ext_resource type="Texture2D" uid="uid://ccoi5t8ycn8vv" path="res://Graphics/Entities/Buildings/civil2.png" id="3_2gubu"]
+[ext_resource type="Texture2D" uid="uid://w5mahjq33bqo" path="res://Graphics/Entities/Trace/civil1.png" id="3_r6u2t"]
+[ext_resource type="Texture2D" uid="uid://bw1olprqimu6u" path="res://Graphics/Entities/Trace/civil2.png" id="4_53qh1"]
+[ext_resource type="Texture2D" uid="uid://db37ai2l2k8yd" path="res://Graphics/Entities/Trace/civil3.png" id="5_s43j2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_af5lw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r6u2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_53qh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s43j2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="building" unique_id=1304179753 instance=ExtResource("1_frv1a")]
 script = ExtResource("2_2gubu")
 building_name = "Civilian"
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=277373365]
-scale = Vector2(0.126, 0.126)
-texture = ExtResource("3_2gubu")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=58613265]
+self_modulate = Color(0, 1, 0, 1)
+texture_filter = 2
+scale = Vector2(0.295, 0.295)
+sprite_frames = SubResource("SpriteFrames_af5lw")
 
 [node name="Button" type="Button" parent="." index="1" unique_id=525947965]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 47.0
+offset_bottom = 47.0
 mouse_default_cursor_shape = 2

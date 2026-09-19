@@ -17,6 +17,27 @@
 [ext_resource type="Script" uid="uid://cuyko0sfxo8mf" path="res://Scenes/top_bar.gd" id="6_sncgy"]
 [ext_resource type="Script" uid="uid://xh8fwuf8m4k1" path="res://Scenes/resources_button.gd" id="7_5ytj4"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
+[ext_resource type="Texture2D" uid="uid://daywu5vtnsj6f" path="res://Graphics/Entities/Trace/lines/vert/vert1.png" id="15_q2xhs"]
+[ext_resource type="Texture2D" uid="uid://d3qweqrn67o03" path="res://Graphics/Entities/Trace/lines/vert/vert2.png" id="16_h600r"]
+[ext_resource type="Texture2D" uid="uid://blj7otu1d1wsd" path="res://Graphics/Entities/Trace/lines/vert/vert3.png" id="17_xomt0"]
+[ext_resource type="Texture2D" uid="uid://boyw54af7h2g8" path="res://Graphics/Entities/Trace/lines/vert/vert4.png" id="18_eek2u"]
+[ext_resource type="Texture2D" uid="uid://druh2fpajimf" path="res://Graphics/Entities/Trace/lines/vert/vert5.png" id="19_mhcst"]
+[ext_resource type="Texture2D" uid="uid://dw3hpkksfvs0d" path="res://Graphics/Entities/Trace/lines/vert/vert6.png" id="20_0dolp"]
+[ext_resource type="Texture2D" uid="uid://c6x2paqfwqvat" path="res://Graphics/Entities/Trace/lines/vert/vert7.png" id="21_6oqxu"]
+[ext_resource type="Texture2D" uid="uid://cjc7vbfcascck" path="res://Graphics/Entities/Trace/lines/vert/vert8.png" id="22_6oqxu"]
+[ext_resource type="Texture2D" uid="uid://dsls7j5sw2pj4" path="res://Graphics/Entities/Trace/lines/vert/vert9.png" id="23_o7wbe"]
+[ext_resource type="Texture2D" uid="uid://b3sof68wj5y1b" path="res://Graphics/Entities/Trace/lines/vert/vert10.png" id="24_o7wbe"]
+[ext_resource type="Texture2D" uid="uid://bpjaidpykn13b" path="res://Graphics/Entities/Trace/lines/vert/vert11.png" id="25_uh8an"]
+[ext_resource type="Texture2D" uid="uid://gxdpds7srvya" path="res://Graphics/Entities/Trace/lines/vert/vert12.png" id="26_dxpk8"]
+[ext_resource type="Texture2D" uid="uid://bkpvfap540lh7" path="res://Graphics/Entities/Trace/lines/horz/horz1.png" id="27_8gkb8"]
+[ext_resource type="Texture2D" uid="uid://bs3ovrsurjd47" path="res://Graphics/Entities/Trace/lines/horz/horz2.png" id="28_ude55"]
+[ext_resource type="Texture2D" uid="uid://nd7tx0rjkkjk" path="res://Graphics/Entities/Trace/lines/horz/horz3.png" id="29_3b30o"]
+[ext_resource type="Texture2D" uid="uid://b1cjbp1pdb04b" path="res://Graphics/Entities/Trace/lines/horz/horz4.png" id="30_pnak6"]
+[ext_resource type="Texture2D" uid="uid://goob01nkwl7r" path="res://Graphics/Entities/Trace/lines/horz/horz5.png" id="31_l8tek"]
+[ext_resource type="Texture2D" uid="uid://d0yufn0f0gl8o" path="res://Graphics/Entities/Trace/lines/horz/horz6.png" id="32_18qia"]
+[ext_resource type="Texture2D" uid="uid://opextdfasd1s" path="res://Graphics/Entities/Trace/lines/horz/horz7.png" id="33_18qia"]
+[ext_resource type="Texture2D" uid="uid://36w1bg5uhxo8" path="res://Graphics/Entities/Trace/lines/horz/horz8.png" id="34_km1i7"]
+[ext_resource type="Texture2D" uid="uid://cxvarwyjqujcb" path="res://Graphics/Entities/Trace/lines/horz/horz9.png" id="35_4wyyb"]
 
 [sub_resource type="GDScript" id="GDScript_5ytj4"]
 script/source = "extends Button
@@ -698,6 +719,142 @@ text = "> Ok <"
 script = ExtResource("4_iv1gs")
 
 [node name="buildings" type="Node2D" parent="world" unique_id=1515735873]
+
+[node name="vert" type="Parallax2D" parent="world" unique_id=1001035445]
+scroll_offset = Vector2(-985, -144)
+repeat_size = Vector2(1116, 841.355)
+repeat_times = 3
+
+[node name="vert1" type="Sprite2D" parent="world/vert" unique_id=959746599]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(193, 135)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("15_q2xhs")
+
+[node name="vert2" type="Sprite2D" parent="world/vert" unique_id=986245493]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(287, 135)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("16_h600r")
+
+[node name="vert3" type="Sprite2D" parent="world/vert" unique_id=1040480945]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(380, 135)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("17_xomt0")
+
+[node name="vert4" type="Sprite2D" parent="world/vert" unique_id=1561133261]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(472, 135.43982)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("18_eek2u")
+
+[node name="vert5" type="Sprite2D" parent="world/vert" unique_id=1693824832]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(566, 135.44)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("19_mhcst")
+
+[node name="vert6" type="Sprite2D" parent="world/vert" unique_id=330773815]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(660, 135.44)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("20_0dolp")
+
+[node name="vert7" type="Sprite2D" parent="world/vert" unique_id=1408206639]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(753, 135.44)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("21_6oqxu")
+
+[node name="vert8" type="Sprite2D" parent="world/vert" unique_id=2116322138]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(850.00006, 134)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("22_6oqxu")
+
+[node name="vert9" type="Sprite2D" parent="world/vert" unique_id=1573119686]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(942, 135)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("23_o7wbe")
+
+[node name="vert10" type="Sprite2D" parent="world/vert" unique_id=1675364450]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(1036, 135.44)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("24_o7wbe")
+
+[node name="vert11" type="Sprite2D" parent="world/vert" unique_id=664352210]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(1127.6218, 135.44)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("25_uh8an")
+
+[node name="vert12" type="Sprite2D" parent="world/vert" unique_id=735442578]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(1223, 135.44)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("26_dxpk8")
+
+[node name="horz" type="Parallax2D" parent="world" unique_id=1513010436]
+scroll_offset = Vector2(-775.1, -748)
+repeat_size = Vector2(860.1, 841.355)
+repeat_times = 3
+
+[node name="horz1" type="Sprite2D" parent="world/horz" unique_id=250780465]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(145.88306, 138.6222)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("27_8gkb8")
+
+[node name="horz2" type="Sprite2D" parent="world/horz" unique_id=2020717968]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(145.88287, 231.62231)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("28_ude55")
+
+[node name="horz3" type="Sprite2D" parent="world/horz" unique_id=518113669]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(145.88287, 324.6223)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("29_3b30o")
+
+[node name="horz4" type="Sprite2D" parent="world/horz" unique_id=2136192882]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(145.88287, 417.6223)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("30_pnak6")
+
+[node name="horz5" type="Sprite2D" parent="world/horz" unique_id=1686966908]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(145.88287, 510.6223)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("31_l8tek")
+
+[node name="horz6" type="Sprite2D" parent="world/horz" unique_id=986324280]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(145.88287, 603.6223)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("32_18qia")
+
+[node name="horz7" type="Sprite2D" parent="world/horz" unique_id=2012354467]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(145.88287, 696.6223)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("33_18qia")
+
+[node name="horz8" type="Sprite2D" parent="world/horz" unique_id=1532687045]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(145.88287, 789.6223)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("34_km1i7")
+
+[node name="horz9" type="Sprite2D" parent="world/horz" unique_id=399780915]
+self_modulate = Color(0, 1, 0, 0.07058824)
+position = Vector2(145.88287, 882.62244)
+scale = Vector2(0.40622202, 0.40622205)
+texture = ExtResource("35_4wyyb")
 
 [node name="action_window" parent="." unique_id=462450761 instance=ExtResource("6_malts")]
 visible = false
