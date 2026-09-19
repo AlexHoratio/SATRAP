@@ -1,0 +1,224 @@
+[gd_scene format=3 uid="uid://bhbigc1dkfl0g"]
+
+[ext_resource type="Script" uid="uid://87aq5xlu747e" path="res://Scenes/construction_window.gd" id="1_rery3"]
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="2_4gpjl"]
+[ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="3_7y1sa"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="4_7ohog"]
+[ext_resource type="PackedScene" uid="uid://b13520h07qp1x" path="res://Prefabs/CanvasLayer/g9patch.tscn" id="5_p7n75"]
+[ext_resource type="Texture2D" uid="uid://dxpl8opi2t1bi" path="res://Graphics/Entities/outpost.png" id="6_l0rfd"]
+[ext_resource type="Texture2D" uid="uid://dr8xixatwevf5" path="res://Graphics/Entities/Sprites/Civil.png" id="7_guj3l"]
+[ext_resource type="Texture2D" uid="uid://gn62s57iir7y" path="res://Graphics/Entities/railway.png" id="8_u66lm"]
+
+[node name="construction_window" type="Control" unique_id=165597288]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_rery3")
+
+[node name="ascii_patch" parent="." unique_id=58068374 instance=ExtResource("2_4gpjl")]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 585.0
+offset_top = -214.0
+offset_right = -594.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_7y1sa")
+
+[node name="header" type="Control" parent="ascii_patch" unique_id=180021826]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 47.0
+grow_horizontal = 2
+
+[node name="drag" type="Button" parent="ascii_patch/header" unique_id=83216180]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 3.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="x" type="LinkButton" parent="ascii_patch/header" unique_id=308981911]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 15.0
+offset_right = -16.0
+offset_bottom = 47.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_7ohog")
+theme_override_font_sizes/font_size = 32
+text = "X"
+underline = 1
+
+[node name="title" type="Label" parent="ascii_patch/header" unique_id=1225720448]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = -3.0
+offset_bottom = 55.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_7ohog")
+theme_override_font_sizes/font_size = 24
+text = "Buildings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line" type="Label" parent="ascii_patch/header" unique_id=1594883637]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = 82.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_7ohog")
+theme_override_font_sizes/font_size = 16
+text = "---------------------------"
+horizontal_alignment = 1
+
+[node name="buildings" type="Control" parent="ascii_patch" unique_id=645534375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="outpost" type="Control" parent="ascii_patch/buildings" unique_id=1526177543]
+anchors_preset = 0
+offset_left = 23.0
+offset_top = 14.0
+offset_right = 71.0
+offset_bottom = 62.0
+
+[node name="g9patch" parent="ascii_patch/buildings/outpost" unique_id=968642944 instance=ExtResource("5_p7n75")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_left = -2.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/outpost" unique_id=2147414435]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("6_l0rfd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="outpost" type="Button" parent="ascii_patch/buildings/outpost" unique_id=174127567]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="civil" type="Control" parent="ascii_patch/buildings" unique_id=1491563383]
+anchors_preset = 0
+offset_left = 75.0
+offset_top = 14.0
+offset_right = 123.0
+offset_bottom = 62.0
+
+[node name="g9patch" parent="ascii_patch/buildings/civil" unique_id=416975364 instance=ExtResource("5_p7n75")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_top = 1.0
+offset_right = 0.0
+offset_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/civil" unique_id=23279713]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("7_guj3l")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="civil" type="Button" parent="ascii_patch/buildings/civil" unique_id=1905016006]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="railway" type="Control" parent="ascii_patch/buildings" unique_id=108026297]
+anchors_preset = 0
+offset_left = 129.0
+offset_top = 14.0
+offset_right = 177.0
+offset_bottom = 62.0
+
+[node name="g9patch" parent="ascii_patch/buildings/railway" unique_id=600678074 instance=ExtResource("5_p7n75")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_top = 1.0
+offset_right = 0.0
+offset_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/railway" unique_id=314191940]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("8_u66lm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="railway" type="Button" parent="ascii_patch/buildings/railway" unique_id=754805588]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[connection signal="button_down" from="ascii_patch/header/drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="ascii_patch/header/drag" to="." method="_on_drag_button_up"]
+[connection signal="pressed" from="ascii_patch/header/x" to="." method="_on_x_pressed"]

@@ -28,6 +28,8 @@ func _on_drag_button_down():
 	dragging = true
 	drag_origin = global_position
 	mouse_origin = get_global_mouse_position()
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _on_drag_button_up():
 	dragging = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

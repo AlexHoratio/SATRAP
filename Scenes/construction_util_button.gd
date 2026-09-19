@@ -20,4 +20,9 @@ func _on_mouse_exited():
 	hovering = false
 
 func _on_pressed():
-	get_node("../../construction_window").toggle_open()
+	if viewer == null:
+		var construction_window = load("res://Prefabs/Entities/Windows/construction_window.tscn").instantiate()
+		construction_window.closed.connect(close_viewer)
+		get_parent().add_child(construction_window)
+		
+		viewer = construction_window
