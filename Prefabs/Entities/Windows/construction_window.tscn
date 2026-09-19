@@ -5,9 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="3_7y1sa"]
 [ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="4_7ohog"]
 [ext_resource type="PackedScene" uid="uid://b13520h07qp1x" path="res://Prefabs/CanvasLayer/g9patch.tscn" id="5_p7n75"]
-[ext_resource type="Texture2D" uid="uid://dxpl8opi2t1bi" path="res://Graphics/Entities/outpost.png" id="6_l0rfd"]
-[ext_resource type="Texture2D" uid="uid://dr8xixatwevf5" path="res://Graphics/Entities/Sprites/Civil.png" id="7_guj3l"]
-[ext_resource type="Texture2D" uid="uid://gn62s57iir7y" path="res://Graphics/Entities/railway.png" id="8_u66lm"]
+[ext_resource type="Texture2D" uid="uid://ber6iit78mccm" path="res://Graphics/Entities/Trace/outpost.png" id="7_4gpjl"]
+[ext_resource type="Texture2D" uid="uid://db37ai2l2k8yd" path="res://Graphics/Entities/Trace/civil3.png" id="7_rery3"]
+[ext_resource type="Texture2D" uid="uid://breo4jwugtruh" path="res://Graphics/Entities/Trace/farm.png" id="8_7y1sa"]
+[ext_resource type="Texture2D" uid="uid://re4tg0578ler" path="res://Graphics/Entities/Trace/factory.png" id="9_4gpjl"]
+[ext_resource type="Texture2D" uid="uid://b1v2nge8fvrr4" path="res://Graphics/Entities/Trace/barracks.png" id="10_7y1sa"]
+[ext_resource type="Texture2D" uid="uid://oywcgax8mh07" path="res://Graphics/Entities/Trace/temple.png" id="11_7ohog"]
 
 [node name="construction_window" type="Control" unique_id=165597288]
 layout_mode = 3
@@ -25,10 +28,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 585.0
-offset_top = -214.0
-offset_right = -594.0
-offset_bottom = -57.0
+offset_left = 427.0
+offset_top = -268.0
+offset_right = -385.0
+offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("3_7y1sa")
@@ -96,7 +99,7 @@ offset_bottom = 82.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_7ohog")
 theme_override_font_sizes/font_size = 16
-text = "---------------------------"
+text = "------------------------------------------------------------------"
 horizontal_alignment = 1
 
 [node name="buildings" type="Control" parent="ascii_patch" unique_id=645534375]
@@ -108,66 +111,31 @@ offset_top = 70.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="outpost" type="Control" parent="ascii_patch/buildings" unique_id=1526177543]
-anchors_preset = 0
-offset_left = 23.0
-offset_top = 14.0
-offset_right = 71.0
-offset_bottom = 62.0
-
-[node name="g9patch" parent="ascii_patch/buildings/outpost" unique_id=968642944 instance=ExtResource("5_p7n75")]
-self_modulate = Color(0, 1, 0, 0.44313726)
-layout_mode = 1
-offset_left = -2.0
-offset_top = 1.0
-offset_right = -2.0
-offset_bottom = 1.0
-
-[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/outpost" unique_id=2147414435]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(24, 24)
-texture = ExtResource("6_l0rfd")
-expand_mode = 1
-stretch_mode = 4
-
-[node name="outpost" type="Button" parent="ascii_patch/buildings/outpost" unique_id=174127567]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_default_cursor_shape = 2
-
 [node name="civil" type="Control" parent="ascii_patch/buildings" unique_id=1491563383]
 anchors_preset = 0
 offset_left = 75.0
 offset_top = 14.0
-offset_right = 123.0
-offset_bottom = 62.0
+offset_right = 168.0
+offset_bottom = 107.0
 
 [node name="g9patch" parent="ascii_patch/buildings/civil" unique_id=416975364 instance=ExtResource("5_p7n75")]
 self_modulate = Color(0, 1, 0, 0.44313726)
 layout_mode = 1
-offset_top = 1.0
 offset_right = 0.0
-offset_bottom = 1.0
+offset_bottom = 0.0
 
 [node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/civil" unique_id=23279713]
+self_modulate = Color(0, 1, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(24, 24)
-texture = ExtResource("7_guj3l")
+texture = ExtResource("7_rery3")
 expand_mode = 1
 stretch_mode = 4
 
@@ -181,35 +149,189 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 
-[node name="railway" type="Control" parent="ascii_patch/buildings" unique_id=108026297]
+[node name="outpost" type="Control" parent="ascii_patch/buildings" unique_id=1534353181]
 anchors_preset = 0
-offset_left = 129.0
+offset_left = 75.0
 offset_top = 14.0
-offset_right = 177.0
-offset_bottom = 62.0
+offset_right = 168.0
+offset_bottom = 107.0
 
-[node name="g9patch" parent="ascii_patch/buildings/railway" unique_id=600678074 instance=ExtResource("5_p7n75")]
+[node name="g9patch" parent="ascii_patch/buildings/outpost" unique_id=968642944 instance=ExtResource("5_p7n75")]
 self_modulate = Color(0, 1, 0, 0.44313726)
 layout_mode = 1
-offset_top = 1.0
 offset_right = 0.0
-offset_bottom = 1.0
+offset_bottom = 0.0
 
-[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/railway" unique_id=314191940]
+[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/outpost" unique_id=868568377]
+self_modulate = Color(0, 1, 0, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 13.0
 offset_top = 2.0
+offset_right = -5.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(24, 24)
-texture = ExtResource("8_u66lm")
+texture = ExtResource("7_4gpjl")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="railway" type="Button" parent="ascii_patch/buildings/railway" unique_id=754805588]
+[node name="outpost" type="Button" parent="ascii_patch/buildings/outpost" unique_id=1546712638]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="farm" type="Control" parent="ascii_patch/buildings" unique_id=910228486]
+anchors_preset = 0
+offset_left = 75.0
+offset_top = 14.0
+offset_right = 168.0
+offset_bottom = 107.0
+
+[node name="g9patch" parent="ascii_patch/buildings/farm" unique_id=1850345540 instance=ExtResource("5_p7n75")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/farm" unique_id=2051993689]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("8_7y1sa")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="farm" type="Button" parent="ascii_patch/buildings/farm" unique_id=982571431]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="factory" type="Control" parent="ascii_patch/buildings" unique_id=992271584]
+anchors_preset = 0
+offset_left = 75.0
+offset_top = 14.0
+offset_right = 168.0
+offset_bottom = 107.0
+
+[node name="g9patch" parent="ascii_patch/buildings/factory" unique_id=524987431 instance=ExtResource("5_p7n75")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/factory" unique_id=1451814891]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("9_4gpjl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="factory" type="Button" parent="ascii_patch/buildings/factory" unique_id=1148026197]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="barracks" type="Control" parent="ascii_patch/buildings" unique_id=1229986487]
+anchors_preset = 0
+offset_left = 75.0
+offset_top = 14.0
+offset_right = 168.0
+offset_bottom = 107.0
+
+[node name="g9patch" parent="ascii_patch/buildings/barracks" unique_id=1889569714 instance=ExtResource("5_p7n75")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/barracks" unique_id=1960985165]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 7.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("10_7y1sa")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="barracks" type="Button" parent="ascii_patch/buildings/barracks" unique_id=774111426]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="temple" type="Control" parent="ascii_patch/buildings" unique_id=1406875942]
+anchors_preset = 0
+offset_left = 75.0
+offset_top = 14.0
+offset_right = 168.0
+offset_bottom = 107.0
+
+[node name="g9patch" parent="ascii_patch/buildings/temple" unique_id=1810517135 instance=ExtResource("5_p7n75")]
+self_modulate = Color(0, 1, 0, 0.44313726)
+layout_mode = 1
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="TextureRect" type="TextureRect" parent="ascii_patch/buildings/temple" unique_id=215161333]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("11_7ohog")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="temple" type="Button" parent="ascii_patch/buildings/temple" unique_id=1647206093]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -222,6 +344,9 @@ mouse_default_cursor_shape = 2
 [connection signal="button_down" from="ascii_patch/header/drag" to="." method="_on_drag_button_down"]
 [connection signal="button_up" from="ascii_patch/header/drag" to="." method="_on_drag_button_up"]
 [connection signal="pressed" from="ascii_patch/header/x" to="." method="_on_x_pressed"]
-[connection signal="pressed" from="ascii_patch/buildings/outpost/outpost" to="." method="_on_outpost_pressed"]
 [connection signal="pressed" from="ascii_patch/buildings/civil/civil" to="." method="_on_civil_pressed"]
-[connection signal="pressed" from="ascii_patch/buildings/railway/railway" to="." method="_on_railway_pressed"]
+[connection signal="pressed" from="ascii_patch/buildings/outpost/outpost" to="." method="_on_outpost_pressed"]
+[connection signal="pressed" from="ascii_patch/buildings/farm/farm" to="." method="_on_farm_pressed"]
+[connection signal="pressed" from="ascii_patch/buildings/factory/factory" to="." method="_on_factory_pressed"]
+[connection signal="pressed" from="ascii_patch/buildings/barracks/barracks" to="." method="_on_barracks_pressed"]
+[connection signal="pressed" from="ascii_patch/buildings/temple/temple" to="." method="_on_temple_pressed"]

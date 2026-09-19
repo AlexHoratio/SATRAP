@@ -3,26 +3,34 @@ extends Control
 signal cancelled
 
 var id_to_sprite_path = {
-	"civil": "res://Graphics/Entities/Sprites/Civil.png",
-	"outpost": "res://Graphics/Entities/Sprites/Outpost.png",
-	"railway": "res://Graphics/Entities/railway.png",
+	"civil": "res://Graphics/Entities/Trace/civil3.png",
+	"outpost": "res://Graphics/Entities/Trace/outpost.png",
+	"farm": "res://Graphics/Entities/Trace/farm.png",
+	"factory": "res://Graphics/Entities/Trace/factory.png",
+	"barracks": "res://Graphics/Entities/Trace/barracks.png",
+	"temple": "res://Graphics/Entities/Trace/temple.png",
 }
 
 var id_to_building_path = {
 	"civil": "res://Prefabs/Entities/civil.tscn",
 	"outpost": "res://Prefabs/Entities/outpost.tscn",
-	"railway": "res://Prefabs/Entities/railway.tscn",
+	"farm": "res://Prefabs/Entities/farm.tscn",
+	"factory": "res://Prefabs/Entities/factory.tscn",
+	"barracks": "res://Prefabs/Entities/barracks.tscn",
+	"temple": "res://Prefabs/Entities/temple.tscn",
 }
 
 var building_id = "civil"
 
 var hovering_blocked_tile = false
 
+var tile_size = Vector2(93, 93)
+
 func _ready():
 	$TextureRect.texture = load(id_to_sprite_path[building_id])
 
 func _process(delta):
-	global_position = snapped(get_global_mouse_position(), Vector2(32, 32)) - Vector2(16, 16)
+	global_position = snapped(get_global_mouse_position(), tile_size) - tile_size/2.0
 		
 	$TextureRect.modulate = Color.RED if hovering_blocked_tile else Color.WHITE
 	
@@ -35,7 +43,7 @@ func _input(event):
 				queue_free()
 			elif event.button_index == MOUSE_BUTTON_LEFT and !hovering_blocked_tile:
 				var new_building = load(id_to_building_path[building_id]).instantiate()
-				new_building.position = global_position + Vector2(16, 16)
+				new_building.position = global_position + tile_size/2.0
 				get_node("../buildings").add_child(new_building)
 				
 				if !Input.is_action_pressed("shift"):
@@ -49,5 +57,5 @@ func check_blocked() -> void:
 		for blocked_pos in building.occupied_tiles:
 			blocked_positions.append(blocked_pos)
 			
-	if (global_position + Vector2(16, 16)) in blocked_positions:
+	if (global_position + tile_size/2.0) in blocked_positions:
 		hovering_blocked_tile = true

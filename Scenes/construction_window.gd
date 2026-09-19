@@ -20,7 +20,7 @@ func _process(delta):
 		close()
 	
 	for building in $ascii_patch/buildings.get_children():
-		var space_x = 52
+		var space_x = 97
 		var target_x = 4 + $ascii_patch.size.x/2.0 - ($ascii_patch/buildings.get_child_count() * (space_x/2.0)) + (building.get_index() * space_x)
 		building.position.x = target_x
 
@@ -54,6 +54,18 @@ func _on_civil_pressed():
 	if construction_particle == null:
 		create_new("civil")
 
-func _on_railway_pressed():
+func _on_farm_pressed():
 	if construction_particle == null:
-		create_new("railway")
+		create_new("farm")
+
+func _on_factory_pressed():
+	if construction_particle == null:
+		create_new("factory")
+
+func _on_barracks_pressed():
+	if construction_particle == null:
+		create_new("barracks")
+
+func _on_temple_pressed():
+	if construction_particle == null:
+		create_new("temple")
