@@ -26,3 +26,5 @@ func _on_pressed():
 		get_parent().add_child(approval_viewer)
 		
 		viewer = approval_viewer
+	else:
+		viewer.close()

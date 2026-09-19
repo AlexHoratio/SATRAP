@@ -26,3 +26,5 @@ func _on_pressed():
 		get_parent().add_child(construction_window)
 		
 		viewer = construction_window
+	else:
+		viewer.close()

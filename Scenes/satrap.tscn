@@ -530,8 +530,8 @@ color = Color(0, 0, 0, 1)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 967.0
-offset_bottom = 967.0
+offset_top = 133.0
+offset_bottom = 133.0
 grow_horizontal = 2
 script = ExtResource("6_sncgy")
 
@@ -562,7 +562,11 @@ grow_vertical = 2
 theme = SubResource("Theme_sncgy")
 theme_override_fonts/normal_font = ExtResource("3_y32xm")
 bbcode_enabled = true
-text = "[color=#0f0]> Welcome gaylored"
+text = "[color=#0f0]> Welcome gaylored.
+[color=#0f0]          ^^^^^^^^  [color=#FF991C]WARNING: [color=#f00]You are gay
+[color=#0f0]---------------
+
+[color=#0f0]> [color=#fff]INFO: Game finished. Ship tomorrow"
 vertical_alignment = 2
 
 [node name="info_bar" parent="CanvasLayer/top_bar/console" unique_id=1409651019 instance=ExtResource("5_83ioq")]
