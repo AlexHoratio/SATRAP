@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cimvxq0m0gif"]
+
+[ext_resource type="Script" uid="uid://3xw2l0gbv7j" path="res://Prefabs/construction_particle.gd" id="1_44erb"]
+
+[node name="construction_particle" type="Control" unique_id=1326526367]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_44erb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=547092286]
+texture_filter = 1
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0

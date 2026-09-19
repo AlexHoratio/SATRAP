@@ -23,6 +23,7 @@ offset_bottom = 71.89041
 texture = ExtResource("3_45b44")
 
 [node name="building_name" type="Label" parent="ascii_patch" unique_id=926989190]
+z_index = 1
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -36,6 +37,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="details" type="RichTextLabel" parent="ascii_patch" unique_id=1574732183]
+z_index = 1
 layout_mode = 1
 offset_left = 13.0
 offset_top = 39.0

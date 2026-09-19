@@ -4,6 +4,7 @@ var tile_size = Vector2(32, 32)
 var line_color = Color(1.0, 1.0, 1.0, 0.137)
 
 func _ready():
+	get_tree().set_meta("world", self)
 	generate_world()
 
 func _process(delta):

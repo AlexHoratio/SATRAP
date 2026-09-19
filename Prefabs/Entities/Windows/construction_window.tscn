@@ -222,3 +222,6 @@ mouse_default_cursor_shape = 2
 [connection signal="button_down" from="ascii_patch/header/drag" to="." method="_on_drag_button_down"]
 [connection signal="button_up" from="ascii_patch/header/drag" to="." method="_on_drag_button_up"]
 [connection signal="pressed" from="ascii_patch/header/x" to="." method="_on_x_pressed"]
+[connection signal="pressed" from="ascii_patch/buildings/outpost/outpost" to="." method="_on_outpost_pressed"]
+[connection signal="pressed" from="ascii_patch/buildings/civil/civil" to="." method="_on_civil_pressed"]
+[connection signal="pressed" from="ascii_patch/buildings/railway/railway" to="." method="_on_railway_pressed"]

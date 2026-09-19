@@ -6,6 +6,8 @@ var dragging = false
 var drag_origin = Vector2(0, 0)
 var mouse_origin = Vector2(0, 0)
 
+var construction_particle = null
+
 func _ready():
 	pass
 	
@@ -26,6 +28,11 @@ func close() -> void:
 	emit_signal("closed")
 	queue_free()
 	
+func create_new(building_id) -> void:
+	var construction_particle = load("res://Prefabs/construction_particle.tscn").instantiate()
+	construction_particle.building_id = building_id
+	get_tree().get_meta("world").add_child(construction_particle)
+	
 func _on_x_pressed():
 	close()
 
@@ -38,3 +45,15 @@ func _on_drag_button_down():
 func _on_drag_button_up():
 	dragging = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func _on_outpost_pressed():
+	if construction_particle == null:
+		create_new("outpost")
+
+func _on_civil_pressed():
+	if construction_particle == null:
+		create_new("civil")
+
+func _on_railway_pressed():
+	if construction_particle == null:
+		create_new("railway")
