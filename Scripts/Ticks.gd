@@ -2,6 +2,29 @@ extends Node
 
 signal tick
 
+var pop_conversion_weights = {
+	"avantists": {
+		"imagists": 0.5,
+		"fragmentists": 0.5,
+		"other": 1.5,
+	},
+	"imagists": {
+		"avantists": 0.1,
+		"fragmentists": 0.5,
+		"other": 1.0,
+	},
+	"fragmentists": {
+		"avantists": 1.0,
+		"imagists": 0.5,
+		"other": 0.5,
+	},
+	"other": {
+		"avantists": 1.0,
+		"imagists": 1.0,
+		"fragmentists": 1.0
+	}
+}
+
 var resources = {
 	"money": 150,
 	"food": 100,
@@ -27,6 +50,8 @@ var local_interests = {
 	"other": 0
 }
 
+var pop_cap = 0
+
 var tick_id = 0
 var tick_speed = 1
 var tick_timer = 0
@@ -48,6 +73,10 @@ func _process(delta):
 func proc_tick():
 	calculate_res_change_per_second()
 	
+	calculate_pop_cap()
+	calculate_pop_conversions()
+	
+	
 func calculate_res_change_per_second() -> void:
 	pass
 	
@@ -64,3 +93,26 @@ func increment_speed() -> void:
 	
 	if speed_multiplier > 4.0:
 		speed_multiplier = 1.0
+
+func calculate_pop_cap() -> void:
+	pop_cap = 0
+	for building in get_tree().get_nodes_in_group("buildings"):
+		if building.building_name == "Civilian":
+			pop_cap += 25
+			
+func get_pop_total() -> int:
+	var total = 0
+	
+	for key in local_interests.keys():
+		total += local_interests[key]
+		
+	return total
+
+func calculate_pop_conversions() -> void:
+	
+	for from in pop_conversion_weights.keys():
+		for to in pop_conversion_weights[from].keys():
+			var amnt = clamp(int(abs(randfn(0, pop_conversion_weights[from][to]))), 0, local_interests[from])
+			
+			local_interests[from] -= amnt
+			local_interests[to] += amnt

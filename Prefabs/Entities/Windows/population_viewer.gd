@@ -8,7 +8,7 @@ var mouse_origin = Vector2(0, 0)
 
 
 func _ready():
-	pass
+	Ticks.tick.connect(update_text)
 	
 func _process(delta):
 	if dragging:
@@ -16,6 +16,27 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("esc"):
 		close()
+		
+func update_text() -> void:
+	var pop_total = Ticks.get_pop_total()
+	
+	var props = {
+		"a": int(100 * float(Ticks.local_interests["avantists"]) / float(pop_total)),
+		"i": int(100 * float(Ticks.local_interests["imagists"]) / float(pop_total)),
+		"f": int(100 * float(Ticks.local_interests["fragmentists"]) / float(pop_total)),
+		"o": int(100 * float(Ticks.local_interests["other"]) / float(pop_total)),
+	}
+	
+	$ascii_patch/breakdown_r.text = "[color=#0f0]" + str(int(Ticks.local_interests["avantists"])) + " [color=#00ff0055](" + str(props["a"]) + "%)
+
+[color=#0f0]" + str(int(Ticks.local_interests["imagists"])) + " [color=#00ff0055](" + str(props["i"]) + "%)
+
+[color=#0f0]" + str(int(Ticks.local_interests["fragmentists"])) + " [color=#00ff0055](" + str(props["f"]) + "%)
+
+[color=#0f0]" + str(int(Ticks.local_interests["other"])) + " [color=#00ff0055](" + str(props["o"]) + "%)"
+	
+	$ascii_patch/total_r.text = "[color=#0f0]" + str(int(pop_total)) + " citizens
+[color=#444]" + str(int(Ticks.pop_cap)) + " capacity"
 		
 func close() -> void:
 	emit_signal("closed")
