@@ -10,13 +10,13 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_xdf7j")
+"texture": ExtResource("5_s43j2")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_r6u2t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_s43j2")
+"texture": ExtResource("4_xdf7j")
 }],
 "loop": 1,
 "name": &"default",
@@ -30,8 +30,10 @@ building_name = "Civilian"
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=58613265]
 self_modulate = Color(0, 1, 0, 1)
 texture_filter = 2
-scale = Vector2(0.295, 0.295)
+position = Vector2(1, 2)
+scale = Vector2(0.276, 0.276)
 sprite_frames = SubResource("SpriteFrames_af5lw")
+frame_progress = 0.7610547
 
 [node name="Button" type="Button" parent="." index="1" unique_id=525947965]
 self_modulate = Color(1, 1, 1, 0)

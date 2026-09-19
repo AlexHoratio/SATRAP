@@ -86,8 +86,8 @@ func generate_world() -> void:
 		$buildings.add_child(village)
 	
 	
-	for i in range(10):
-		var radius = 400
+	for i in range(20):
+		var radius = 650
 		var civil = load("res://Prefabs/Entities/civil.tscn").instantiate()
 		var building_position = Vector2(720, 540) + Vector2(radius * randf(), 0).rotated(2 * PI * randf())
 		building_position = building_position.snapped(tile_size)
@@ -103,6 +103,82 @@ func generate_world() -> void:
 		
 		civil.position = building_position
 		$buildings.add_child(civil)
+	
+	for i in range(1):
+		var radius = 500
+		var min_radius = 0
+		var temple = load("res://Prefabs/Entities/temple.tscn").instantiate()
+		var building_position = Vector2(720, 540) + Vector2(min_radius + (radius - min_radius) * randf(), 0).rotated(2 * PI * randf())
+		building_position = building_position.snapped(tile_size)
+		
+		var position_occupied = true
+		while position_occupied:
+			building_position = Vector2(720, 540) + Vector2(min_radius + (radius - min_radius) * randf(), 0).rotated(2 * PI * randf())
+			building_position = building_position.snapped(tile_size)
+			position_occupied = false
+			for building in get_tree().get_nodes_in_group("buildings"):
+				if building_position in building.occupied_tiles:
+					position_occupied = true
+		
+		temple.position = building_position
+		$buildings.add_child(temple)
+	
+	for i in range(1):
+		var radius = 500
+		var min_radius = 0
+		var factory = load("res://Prefabs/Entities/factory.tscn").instantiate()
+		var building_position = Vector2(720, 540) + Vector2(min_radius + (radius - min_radius) * randf(), 0).rotated(2 * PI * randf())
+		building_position = building_position.snapped(tile_size)
+		
+		var position_occupied = true
+		while position_occupied:
+			building_position = Vector2(720, 540) + Vector2(min_radius + (radius - min_radius) * randf(), 0).rotated(2 * PI * randf())
+			building_position = building_position.snapped(tile_size)
+			position_occupied = false
+			for building in get_tree().get_nodes_in_group("buildings"):
+				if building_position in building.occupied_tiles:
+					position_occupied = true
+		
+		factory.position = building_position
+		$buildings.add_child(factory)
+	
+	for i in range(2):
+		var radius = 500
+		var min_radius = 0
+		var farm = load("res://Prefabs/Entities/farm.tscn").instantiate()
+		var building_position = Vector2(720, 540) + Vector2(min_radius + (radius - min_radius) * randf(), 0).rotated(2 * PI * randf())
+		building_position = building_position.snapped(tile_size)
+		
+		var position_occupied = true
+		while position_occupied:
+			building_position = Vector2(720, 540) + Vector2(min_radius + (radius - min_radius) * randf(), 0).rotated(2 * PI * randf())
+			building_position = building_position.snapped(tile_size)
+			position_occupied = false
+			for building in get_tree().get_nodes_in_group("buildings"):
+				if building_position in building.occupied_tiles:
+					position_occupied = true
+		
+		farm.position = building_position
+		$buildings.add_child(farm)
+	
+	for i in range(1):
+		var radius = 500
+		var min_radius = 0
+		var barracks = load("res://Prefabs/Entities/barracks.tscn").instantiate()
+		var building_position = Vector2(720, 540) + Vector2(min_radius + (radius - min_radius) * randf(), 0).rotated(2 * PI * randf())
+		building_position = building_position.snapped(tile_size)
+		
+		var position_occupied = true
+		while position_occupied:
+			building_position = Vector2(720, 540) + Vector2(min_radius + (radius - min_radius) * randf(), 0).rotated(2 * PI * randf())
+			building_position = building_position.snapped(tile_size)
+			position_occupied = false
+			for building in get_tree().get_nodes_in_group("buildings"):
+				if building_position in building.occupied_tiles:
+					position_occupied = true
+		
+		barracks.position = building_position
+		$buildings.add_child(barracks)
 	
 	for i in range(1):
 		var radius = 1600

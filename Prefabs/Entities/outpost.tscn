@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://vkkcbew2jkqe"]
 
-[ext_resource type="Texture2D" uid="uid://dxpl8opi2t1bi" path="res://Graphics/Entities/outpost.png" id="1_u5n8c"]
+[ext_resource type="PackedScene" uid="uid://c6gatc2wlssfe" path="res://Prefabs/Entities/building.tscn" id="1_iy1c4"]
+[ext_resource type="Script" uid="uid://1imu4dt01tpb" path="res://Prefabs/Entities/circulatory_gate.gd" id="2_oap14"]
+[ext_resource type="Texture2D" uid="uid://ber6iit78mccm" path="res://Graphics/Entities/Trace/outpost.png" id="3_iy1c4"]
 
-[node name="outpost" type="Node2D" unique_id=2144949416]
+[node name="building" unique_id=1304179753 instance=ExtResource("1_iy1c4")]
+script = ExtResource("2_oap14")
+building_name = "Outpost"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=703427223]
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1961335286]
+self_modulate = Color(0, 1, 0, 1)
 texture_filter = 1
-scale = Vector2(3, 3)
-texture = ExtResource("1_u5n8c")
+position = Vector2(0, -1.0000001)
+scale = Vector2(0.2523933, 0.2523933)
+texture = ExtResource("3_iy1c4")
+
+[node name="Button" type="Button" parent="." index="1" unique_id=1766506910]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -46.0
+offset_top = -46.0
+offset_right = 47.0
+offset_bottom = 47.0
+mouse_default_cursor_shape = 2
