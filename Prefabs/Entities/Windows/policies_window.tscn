@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://d0jnsp2oe4q5y"]
+
+[ext_resource type="Script" uid="uid://b7ywrvapo7g53" path="res://Prefabs/Entities/Windows/policies_window.gd" id="1_c01od"]
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="2_45477"]
+[ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="3_0dlpu"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="4_45477"]
+
+[node name="policies_window" type="Control" unique_id=1763936102]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_c01od")
+
+[node name="ascii_patch" parent="." unique_id=58068374 instance=ExtResource("2_45477")]
+layout_mode = 0
+offset_left = 1030.0
+offset_top = 296.0
+offset_right = 1330.0
+offset_bottom = 917.0
+texture = ExtResource("3_0dlpu")
+
+[node name="header" type="Control" parent="ascii_patch" unique_id=664920869]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 82.5
+grow_horizontal = 2
+
+[node name="drag" type="Button" parent="ascii_patch/header" unique_id=852263193]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="title" type="Label" parent="ascii_patch/header" unique_id=1118814611]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_45477")
+theme_override_font_sizes/font_size = 32
+text = "Policies"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="x" type="LinkButton" parent="ascii_patch" unique_id=1687650467]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.625
+offset_top = 26.5
+offset_right = -31.625
+offset_bottom = 58.5
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("4_45477")
+theme_override_font_sizes/font_size = 32
+text = "X"
+underline = 1
+
+[node name="div" type="Label" parent="ascii_patch" unique_id=669120896]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 67.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_45477")
+text = "--------------------------------"
+horizontal_alignment = 1
+
+[node name="policy_list" type="Control" parent="ascii_patch" unique_id=793081323]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 86.0
+offset_right = -12.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ascii_patch/policy_list" unique_id=668727001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="policy" type="LinkButton" parent="ascii_patch/policy_list/VBoxContainer" unique_id=1508385809]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_45477")
+text = "> Standardize Currency <"
+underline = 1
+
+[connection signal="button_down" from="ascii_patch/header/drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="ascii_patch/header/drag" to="." method="_on_drag_button_up"]
+[connection signal="pressed" from="ascii_patch/x" to="." method="_on_x_pressed"]
