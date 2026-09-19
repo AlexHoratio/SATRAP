@@ -75,7 +75,7 @@ func proc_tick():
 	
 	calculate_pop_cap()
 	calculate_pop_conversions()
-	
+	calculate_pop_growth()
 	
 func calculate_res_change_per_second() -> void:
 	pass
@@ -109,10 +109,28 @@ func get_pop_total() -> int:
 	return total
 
 func calculate_pop_conversions() -> void:
-	
 	for from in pop_conversion_weights.keys():
 		for to in pop_conversion_weights[from].keys():
 			var amnt = clamp(int(abs(randfn(0, pop_conversion_weights[from][to]))), 0, local_interests[from])
 			
 			local_interests[from] -= amnt
 			local_interests[to] += amnt
+
+func calculate_pop_growth() -> void:
+	var happiness = 1.0
+	
+	var growth_amount = int(abs(randfn(0, happiness))) 
+	
+	var i = randi()%get_pop_total()
+	var interests = local_interests.keys()
+	interests.shuffle()
+	
+	var choice = ""
+	
+	for interest in interests:
+		choice = interest
+		i -= local_interests[interest]
+		if i < 0:
+			break
+			
+	local_interests[choice] += growth_amount
