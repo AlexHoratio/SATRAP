@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://i8ul7v3atdxf" path="res://Prefabs/Entities/Windows/inspect_window.tscn" id="5_yg0qq"]
 [ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="6_0a1jj"]
 [ext_resource type="PackedScene" uid="uid://w56ex1jngn1o" path="res://Prefabs/Entities/Windows/action_window.tscn" id="6_malts"]
+[ext_resource type="Script" uid="uid://cuyko0sfxo8mf" path="res://Scenes/top_bar.gd" id="6_sncgy"]
 [ext_resource type="Script" uid="uid://bxhyagvikexol" path="res://Scenes/world_camera.gd" id="7_42a5o"]
 
 [sub_resource type="GDScript" id="GDScript_5ytj4"]
@@ -98,6 +99,23 @@ shader_parameter/blur = 0.35
 shader_parameter/diffusion = 0.185
 shader_parameter/vinnette_alpla = 0.0
 shader_parameter/vinnette_inner_radius = 1000000.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7pqoj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tq2b"]
+bg_color = Color(0, 0.6, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v57e"]
+bg_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pqoj"]
+bg_color = Color(0, 0.29803923, 0, 1)
+
+[sub_resource type="Theme" id="Theme_sncgy"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_7pqoj")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_8tq2b")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_6v57e")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_7pqoj")
 
 [sub_resource type="GDScript" id="GDScript_83ioq"]
 script/source = "extends Label
@@ -512,52 +530,96 @@ color = Color(0, 0, 0, 1)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 45.0
+offset_top = 967.0
+offset_bottom = 967.0
 grow_horizontal = 2
+script = ExtResource("6_sncgy")
 
-[node name="ascii_patch" parent="CanvasLayer/top_bar" unique_id=58068374 instance=ExtResource("5_83ioq")]
+[node name="console" parent="CanvasLayer/top_bar" unique_id=58068374 instance=ExtResource("5_83ioq")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -30.0
-offset_right = 0.0
-offset_bottom = -11.0
+offset_left = -30.0
+offset_top = -1062.0
+offset_right = 25.0
+offset_bottom = 57.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_0a1jj")
 
-[node name="date" type="Label" parent="CanvasLayer/top_bar/ascii_patch" unique_id=624409951]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/top_bar/console" unique_id=1838401333]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 47.0
+offset_top = 117.0
+offset_right = -40.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_sncgy")
+theme_override_fonts/normal_font = ExtResource("3_y32xm")
+bbcode_enabled = true
+text = "[color=#0f0]> Welcome gaylored"
+vertical_alignment = 2
+
+[node name="info_bar" parent="CanvasLayer/top_bar/console" unique_id=1409651019 instance=ExtResource("5_83ioq")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -747.5
+offset_top = -64.0
+offset_right = 747.5
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="drag" type="Button" parent="CanvasLayer/top_bar/console/info_bar" unique_id=1638272656]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="date" type="Label" parent="CanvasLayer/top_bar/console/info_bar" unique_id=624409951]
 self_modulate = Color(0, 1, 0, 1)
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 37.0
-offset_top = 36.0
-offset_right = 284.0
-offset_bottom = -12.0
+offset_left = 52.0
+offset_top = 25.0
+offset_right = 299.0
+offset_bottom = -23.0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_y32xm")
 text = "Year 1 - 1st of January"
 script = SubResource("GDScript_83ioq")
 
-[node name="playpause" type="LinkButton" parent="CanvasLayer/top_bar/ascii_patch" unique_id=1216559493]
+[node name="playpause" type="LinkButton" parent="CanvasLayer/top_bar/console/info_bar" unique_id=1216559493]
 layout_mode = 0
-offset_left = 288.0
-offset_top = 37.0
-offset_right = 378.0
-offset_bottom = 53.0
+offset_left = 303.0
+offset_top = 26.0
+offset_right = 393.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("3_y32xm")
 text = "> PAUSED <"
 underline = 1
 script = SubResource("GDScript_0a1jj")
 
-[node name="speed" type="LinkButton" parent="CanvasLayer/top_bar/ascii_patch" unique_id=327771243]
+[node name="speed" type="LinkButton" parent="CanvasLayer/top_bar/console/info_bar" unique_id=327771243]
 layout_mode = 0
-offset_left = 418.0
-offset_top = 37.0
-offset_right = 454.0
-offset_bottom = 53.0
+offset_left = 433.0
+offset_top = 26.0
+offset_right = 469.0
+offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("3_y32xm")
 text = "x1.0"
 underline = 1
@@ -643,6 +705,8 @@ script = ExtResource("7_42a5o")
 [connection signal="mouse_entered" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/top_bar/ascii_patch/playpause" to="CanvasLayer/top_bar/ascii_patch/playpause" method="_on_pressed"]
-[connection signal="pressed" from="CanvasLayer/top_bar/ascii_patch/speed" to="CanvasLayer/top_bar/ascii_patch/speed" method="_on_pressed"]
+[connection signal="button_down" from="CanvasLayer/top_bar/console/info_bar/drag" to="CanvasLayer/top_bar" method="_on_drag_button_down"]
+[connection signal="button_up" from="CanvasLayer/top_bar/console/info_bar/drag" to="CanvasLayer/top_bar" method="_on_drag_button_up"]
+[connection signal="pressed" from="CanvasLayer/top_bar/console/info_bar/playpause" to="CanvasLayer/top_bar/console/info_bar/playpause" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/top_bar/console/info_bar/speed" to="CanvasLayer/top_bar/console/info_bar/speed" method="_on_pressed"]
 [connection signal="pressed" from="asdfasd" to="." method="_on_asdfasd_pressed"]
