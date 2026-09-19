@@ -9,6 +9,7 @@ var mouse_origin = Vector2(0, 0)
 
 func _ready():
 	Ticks.tick.connect(update_text)
+	update_text()
 	
 func _process(delta):
 	if dragging:
