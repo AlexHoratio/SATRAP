@@ -9,7 +9,6 @@ script = ExtResource("2_4w0yw")
 building_name = "Administration"
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=2134217759]
-texture_filter = 1
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("3_4w0yw")
 

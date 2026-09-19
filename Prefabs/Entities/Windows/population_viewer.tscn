@@ -20,7 +20,7 @@ layout_mode = 0
 offset_left = 945.0
 offset_top = 740.0
 offset_right = 1288.0
-offset_bottom = 1016.0
+offset_bottom = 1032.0
 texture = ExtResource("2_gwe34")
 
 [node name="header" type="Control" parent="ascii_patch" unique_id=1935119879]
@@ -83,11 +83,13 @@ text = "-----------------------------------"
 horizontal_alignment = 1
 
 [node name="breakdown_l" type="RichTextLabel" parent="ascii_patch" unique_id=807729552]
-layout_mode = 0
-anchor_left = 0.051980197
-anchor_top = 0.32971016
-anchor_right = 0.9306931
-anchor_bottom = 0.9927536
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 17.829208
+offset_top = 91.0
+offset_right = -23.772278
+offset_bottom = 274.0
 theme_override_fonts/normal_font = ExtResource("3_kvasm")
 bbcode_enabled = true
 text = "[color=#0f0]Avantists:
@@ -100,11 +102,13 @@ text = "[color=#0f0]Avantists:
 metadata/_edit_use_anchors_ = true
 
 [node name="breakdown_r" type="RichTextLabel" parent="ascii_patch" unique_id=2069862919]
-layout_mode = 0
-anchor_left = 0.051980197
-anchor_top = 0.32971016
-anchor_right = 0.9306931
-anchor_bottom = 0.9927536
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 17.829208
+offset_top = 91.0
+offset_right = -23.772278
+offset_bottom = 274.0
 theme_override_fonts/normal_font = ExtResource("3_kvasm")
 bbcode_enabled = true
 text = "[color=#0f0]294 [color=#00ff0055](94%)
@@ -119,40 +123,43 @@ metadata/_edit_use_anchors_ = true
 
 [node name="div2" type="Label" parent="ascii_patch" unique_id=1837074304]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -62.0
-offset_right = 342.0
-offset_bottom = -46.0
-grow_vertical = 0
+anchors_preset = -1
+anchor_right = 0.99700004
+offset_top = 214.0
+offset_right = 0.0289917
+offset_bottom = 230.0
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_kvasm")
 text = "-----------------------------------"
 horizontal_alignment = 1
 
 [node name="total_l" type="RichTextLabel" parent="ascii_patch" unique_id=120870317]
-layout_mode = 0
-anchor_left = 0.051980197
-anchor_top = 0.8731884
-anchor_right = 0.9306931
-anchor_bottom = 0.9927536
-offset_top = 1.5258789e-05
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 17.829208
+offset_top = 241.0
+offset_right = -23.772278
+offset_bottom = 274.0
 theme_override_fonts/normal_font = ExtResource("3_kvasm")
 bbcode_enabled = true
 text = "[color=#0f0]Total:"
 metadata/_edit_use_anchors_ = true
 
 [node name="total_r" type="RichTextLabel" parent="ascii_patch" unique_id=69908581]
-layout_mode = 0
-anchor_left = 0.051980197
-anchor_top = 0.8731884
-anchor_right = 0.9306931
-anchor_bottom = 0.9927536
-offset_top = 1.5258789e-05
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 17.829208
+offset_top = 241.0
+offset_right = -23.772278
+offset_bottom = 274.0
 theme_override_fonts/normal_font = ExtResource("3_kvasm")
 bbcode_enabled = true
-text = "[color=#0f0]320 citizens"
+text = "[color=#0f0]320 citizens
+[color=#444]450 capacity"
+fit_content = true
 horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 

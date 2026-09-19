@@ -9,7 +9,6 @@ script = ExtResource("2_2gubu")
 building_name = "Civilian"
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=277373365]
-texture_filter = 1
 scale = Vector2(0.126, 0.126)
 texture = ExtResource("3_2gubu")
 

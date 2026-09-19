@@ -3,9 +3,21 @@ extends Node
 signal tick
 
 var resources = {
-	"pop": 100,
-	"pop_cap": 150,
-	"food": 100
+	"money": 150,
+	"food": 100,
+	"basic_civ_goods": 0,
+	"luxury_civ_goods": 0,
+	"basic_military_equip": 0,
+	"specialist_military_equip": 0
+}
+
+var res_change_per_second = {
+	"money": 0,
+	"food": 0,
+	"basic_civ_goods": 0,
+	"luxury_civ_goods": 0,
+	"basic_military_equip": 0,
+	"specialist_military_equip": 0
 }
 
 var local_interests = {
@@ -34,20 +46,10 @@ func _process(delta):
 			emit_signal("tick")
 	
 func proc_tick():
-	tick_production()
-	tick_consumption()
+	calculate_res_change_per_second()
 	
-func tick_production():
-	for building in get_tree().get_nodes_in_group("buildings"):
-		pass
-		
-func tick_consumption():
-	var net_food_eat = 0
-	for building in get_tree().get_nodes_in_group("buildings"):
-		if building.building_name == "Civilian":
-			net_food_eat += 0.1
-			
-	resources["food"] -= net_food_eat
+func calculate_res_change_per_second() -> void:
+	pass
 	
 func get_date_string():
 	var days = floor(tick_id / 6.0)
