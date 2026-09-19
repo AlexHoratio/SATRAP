@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://by77ul1srwihs"]
+
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="1_umbyf"]
+
+[node name="policy_entry" type="Control" unique_id=1086381228]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 152.0
+grow_horizontal = 2
+
+[node name="policy_name" type="Label" parent="." unique_id=490944411]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 15.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_umbyf")
+text = ">> Standardize Currency "
+
+[node name="desc" type="RichTextLabel" parent="." unique_id=1000606128]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 27.0
+offset_top = 26.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_umbyf")
+bbcode_enabled = true
+text = "[color=#47ff47]Make everything the same currency. Makes sense right?? Well it better. Because this is a sensible policy that you want to select, probably. "
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="adopt" type="LinkButton" parent="." unique_id=974044572]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 104.0
+offset_right = 78.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("1_umbyf")
+theme_override_font_sizes/font_size = 24
+text = "ADOPT"
+underline = 1
+
+[node name="div" type="Label" parent="." unique_id=436500311]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_umbyf")
+text = "--------------------------------------------"
+horizontal_alignment = 1

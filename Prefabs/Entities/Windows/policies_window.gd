@@ -6,12 +6,18 @@ var dragging = false
 var drag_origin = Vector2(0, 0)
 var mouse_origin = Vector2(0, 0)
 
+func _ready():
+	generate_policy_list()
+
 func _process(delta):
 	if dragging:
 		global_position = drag_origin + (get_global_mouse_position() - mouse_origin)
 	
 	if Input.is_action_just_pressed("esc"):
 		close()
+		
+func generate_policy_list() -> void:
+	pass # nothing for now
 		
 func close() -> void:
 	emit_signal("closed")

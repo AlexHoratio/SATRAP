@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="2_45477"]
 [ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="3_0dlpu"]
 [ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="4_45477"]
+[ext_resource type="PackedScene" uid="uid://by77ul1srwihs" path="res://Prefabs/Entities/Windows/policy_entry.tscn" id="5_0dlpu"]
 
 [node name="policies_window" type="Control" unique_id=1763936102]
 layout_mode = 3
@@ -17,7 +18,7 @@ script = ExtResource("1_c01od")
 
 [node name="ascii_patch" parent="." unique_id=58068374 instance=ExtResource("2_45477")]
 layout_mode = 0
-offset_left = 1030.0
+offset_left = 910.0
 offset_top = 296.0
 offset_right = 1330.0
 offset_bottom = 917.0
@@ -79,7 +80,7 @@ offset_bottom = 83.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("4_45477")
-text = "--------------------------------"
+text = "--------------------------------------------"
 horizontal_alignment = 1
 
 [node name="policy_list" type="Control" parent="ascii_patch" unique_id=793081323]
@@ -94,20 +95,72 @@ offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ascii_patch/policy_list" unique_id=668727001]
+[node name="policy_entry" parent="ascii_patch/policy_list" unique_id=1086381228 instance=ExtResource("5_0dlpu")]
 layout_mode = 1
-anchors_preset = 15
+
+[node name="policy_entry2" type="Control" parent="ascii_patch/policy_list" unique_id=1871942883]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 155.0
+offset_bottom = 277.0
+grow_horizontal = 2
+
+[node name="policy_name" type="Label" parent="ascii_patch/policy_list/policy_entry2" unique_id=490944411]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -1.0
+offset_bottom = 15.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_45477")
+text = ">> Ideological Education Reform"
+
+[node name="desc" type="RichTextLabel" parent="ascii_patch/policy_list/policy_entry2" unique_id=1000606128]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 27.0
+offset_top = 26.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("4_45477")
+bbcode_enabled = true
+text = "[color=#47ff47]Man, I always knew these motherfuckers were too cool for school. "
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="adopt" type="LinkButton" parent="ascii_patch/policy_list/policy_entry2" unique_id=974044572]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -48.0
+offset_right = 78.0
+offset_bottom = -24.0
+theme_override_fonts/font = ExtResource("4_45477")
+theme_override_font_sizes/font_size = 24
+text = "ADOPT"
+underline = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="div" type="Label" parent="ascii_patch/policy_list/policy_entry2" unique_id=436500311]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -16.0
 grow_horizontal = 2
-grow_vertical = 2
-
-[node name="policy" type="LinkButton" parent="ascii_patch/policy_list/VBoxContainer" unique_id=1508385809]
-self_modulate = Color(0, 1, 0, 1)
-layout_mode = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("4_45477")
-text = "> Standardize Currency <"
-underline = 1
+text = "--------------------------------------------"
+horizontal_alignment = 1
 
 [connection signal="button_down" from="ascii_patch/header/drag" to="." method="_on_drag_button_down"]
 [connection signal="button_up" from="ascii_patch/header/drag" to="." method="_on_drag_button_up"]
