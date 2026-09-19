@@ -718,81 +718,79 @@ text = "> Ok <"
 [node name="world" type="Node2D" parent="." unique_id=393979327]
 script = ExtResource("4_iv1gs")
 
-[node name="buildings" type="Node2D" parent="world" unique_id=1515735873]
-
 [node name="vert" type="Parallax2D" parent="world" unique_id=1001035445]
 scroll_offset = Vector2(-985, -144)
 repeat_size = Vector2(1116, 841.355)
 repeat_times = 3
 
 [node name="vert1" type="Sprite2D" parent="world/vert" unique_id=959746599]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(193, 135)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("15_q2xhs")
 
 [node name="vert2" type="Sprite2D" parent="world/vert" unique_id=986245493]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(287, 135)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("16_h600r")
 
 [node name="vert3" type="Sprite2D" parent="world/vert" unique_id=1040480945]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(380, 135)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("17_xomt0")
 
 [node name="vert4" type="Sprite2D" parent="world/vert" unique_id=1561133261]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(472, 135.43982)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("18_eek2u")
 
 [node name="vert5" type="Sprite2D" parent="world/vert" unique_id=1693824832]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(566, 135.44)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("19_mhcst")
 
 [node name="vert6" type="Sprite2D" parent="world/vert" unique_id=330773815]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(660, 135.44)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("20_0dolp")
 
 [node name="vert7" type="Sprite2D" parent="world/vert" unique_id=1408206639]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(753, 135.44)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("21_6oqxu")
 
 [node name="vert8" type="Sprite2D" parent="world/vert" unique_id=2116322138]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(850.00006, 134)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("22_6oqxu")
 
 [node name="vert9" type="Sprite2D" parent="world/vert" unique_id=1573119686]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(942, 135)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("23_o7wbe")
 
 [node name="vert10" type="Sprite2D" parent="world/vert" unique_id=1675364450]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(1036, 135.44)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("24_o7wbe")
 
 [node name="vert11" type="Sprite2D" parent="world/vert" unique_id=664352210]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(1127.6218, 135.44)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("25_uh8an")
 
 [node name="vert12" type="Sprite2D" parent="world/vert" unique_id=735442578]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(1223, 135.44)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("26_dxpk8")
@@ -803,58 +801,60 @@ repeat_size = Vector2(860.1, 841.355)
 repeat_times = 3
 
 [node name="horz1" type="Sprite2D" parent="world/horz" unique_id=250780465]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(145.88306, 138.6222)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("27_8gkb8")
 
 [node name="horz2" type="Sprite2D" parent="world/horz" unique_id=2020717968]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(145.88287, 231.62231)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("28_ude55")
 
 [node name="horz3" type="Sprite2D" parent="world/horz" unique_id=518113669]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(145.88287, 324.6223)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("29_3b30o")
 
 [node name="horz4" type="Sprite2D" parent="world/horz" unique_id=2136192882]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(145.88287, 417.6223)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("30_pnak6")
 
 [node name="horz5" type="Sprite2D" parent="world/horz" unique_id=1686966908]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(145.88287, 510.6223)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("31_l8tek")
 
 [node name="horz6" type="Sprite2D" parent="world/horz" unique_id=986324280]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(145.88287, 603.6223)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("32_18qia")
 
 [node name="horz7" type="Sprite2D" parent="world/horz" unique_id=2012354467]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(145.88287, 696.6223)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("33_18qia")
 
 [node name="horz8" type="Sprite2D" parent="world/horz" unique_id=1532687045]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(145.88287, 789.6223)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("34_km1i7")
 
 [node name="horz9" type="Sprite2D" parent="world/horz" unique_id=399780915]
-self_modulate = Color(0, 1, 0, 0.07058824)
+self_modulate = Color(0, 1, 0, 0.06666667)
 position = Vector2(145.88287, 882.62244)
 scale = Vector2(0.40622202, 0.40622205)
 texture = ExtResource("35_4wyyb")
+
+[node name="buildings" type="Node2D" parent="world" unique_id=1515735873]
 
 [node name="action_window" parent="." unique_id=462450761 instance=ExtResource("6_malts")]
 visible = false

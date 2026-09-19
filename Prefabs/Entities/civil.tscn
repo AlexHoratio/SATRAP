@@ -2,18 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://c6gatc2wlssfe" path="res://Prefabs/Entities/building.tscn" id="1_frv1a"]
 [ext_resource type="Script" uid="uid://c1k01eku36n3y" path="res://Prefabs/Entities/civil.gd" id="2_2gubu"]
-[ext_resource type="Texture2D" uid="uid://w5mahjq33bqo" path="res://Graphics/Entities/Trace/civil1.png" id="3_r6u2t"]
-[ext_resource type="Texture2D" uid="uid://bw1olprqimu6u" path="res://Graphics/Entities/Trace/civil2.png" id="4_53qh1"]
+[ext_resource type="Texture2D" uid="uid://cxxa3thc1kmlc" path="res://Graphics/Entities/Trace/civil4.png" id="4_xdf7j"]
+[ext_resource type="Texture2D" uid="uid://0qu4rgbdo5ks" path="res://Graphics/Entities/Trace/civil5.png" id="5_r6u2t"]
 [ext_resource type="Texture2D" uid="uid://db37ai2l2k8yd" path="res://Graphics/Entities/Trace/civil3.png" id="5_s43j2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_af5lw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_r6u2t")
+"texture": ExtResource("4_xdf7j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_53qh1")
+"texture": ExtResource("5_r6u2t")
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_s43j2")
