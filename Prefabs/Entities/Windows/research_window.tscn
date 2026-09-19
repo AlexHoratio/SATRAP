@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://d3wcryujt7sbv"]
+
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="1_daa1l"]
+[ext_resource type="Script" uid="uid://dtt3pqk3ce20v" path="res://Prefabs/Entities/Windows/research_window.gd" id="1_kebye"]
+[ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="2_ncn55"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_ncn55"]
+
+[node name="research_window" type="Control" unique_id=1014758793]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_kebye")
+
+[node name="ascii_patch" parent="." unique_id=58068374 instance=ExtResource("1_daa1l")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -467.5
+offset_top = -370.0
+offset_right = 467.5
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("2_ncn55")
+
+[node name="header" type="Control" parent="ascii_patch" unique_id=679180736]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 82.5
+grow_horizontal = 2
+
+[node name="drag" type="Button" parent="ascii_patch/header" unique_id=319414136]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+
+[node name="title" type="Label" parent="ascii_patch/header" unique_id=553926727]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_ncn55")
+theme_override_font_sizes/font_size = 32
+text = "Research"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="x" type="LinkButton" parent="ascii_patch" unique_id=1341207582]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.625
+offset_top = 26.5
+offset_right = -31.625
+offset_bottom = 58.5
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("3_ncn55")
+theme_override_font_sizes/font_size = 32
+text = "X"
+underline = 1
+
+[node name="div" type="Label" parent="ascii_patch" unique_id=607805121]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 67.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_ncn55")
+text = "-----------------------------------------------------------------------------------------------------"
+horizontal_alignment = 1
+
+[node name="progress" parent="ascii_patch" unique_id=41490209 instance=ExtResource("1_daa1l")]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 99.0
+offset_right = -16.0
+offset_bottom = 163.0
+grow_horizontal = 2
+
+[node name="complete_in" type="Label" parent="ascii_patch/progress" unique_id=508976878]
+self_modulate = Color(0, 0.59, 0, 1)
+layout_mode = 0
+offset_left = 19.0
+offset_top = 78.0
+offset_right = 433.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("3_ncn55")
+text = "... Research Completed In: 34 days (4th March)"
+
+[connection signal="button_down" from="ascii_patch/header/drag" to="." method="_on_drag_button_down"]
+[connection signal="button_up" from="ascii_patch/header/drag" to="." method="_on_drag_button_up"]
+[connection signal="pressed" from="ascii_patch/x" to="." method="_on_x_pressed"]

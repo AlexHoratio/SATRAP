@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cvgypix1816iu" path="res://Scenes/world.gd" id="4_iv1gs"]
 [ext_resource type="Script" uid="uid://djwvpi4fa2cn3" path="res://Scenes/policies_button.gd" id="4_l8lry"]
 [ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="5_83ioq"]
+[ext_resource type="Script" uid="uid://rixcf8s8jf1r" path="res://Scenes/research_button.gd" id="5_l8lry"]
 [ext_resource type="PackedScene" uid="uid://i8ul7v3atdxf" path="res://Prefabs/Entities/Windows/inspect_window.tscn" id="5_yg0qq"]
 [ext_resource type="Texture2D" uid="uid://d3yswvtxapsa7" path="res://Graphics/CanvasLayer/ascii_border_filled.png" id="6_0a1jj"]
 [ext_resource type="PackedScene" uid="uid://w56ex1jngn1o" path="res://Prefabs/Entities/Windows/action_window.tscn" id="6_malts"]
@@ -336,6 +337,7 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_y32xm")
 theme_override_font_sizes/font_size = 48
+script = ExtResource("5_l8lry")
 
 [node name="text" type="Label" parent="CanvasLayer/utilities/research" unique_id=348633293]
 layout_mode = 1
@@ -711,6 +713,9 @@ script = ExtResource("7_42a5o")
 [connection signal="mouse_entered" from="CanvasLayer/utilities/policies" to="CanvasLayer/utilities/policies" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/utilities/policies" to="CanvasLayer/utilities/policies" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/utilities/policies" to="CanvasLayer/utilities/policies" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/utilities/research" to="CanvasLayer/utilities/research" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/utilities/research" to="CanvasLayer/utilities/research" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/utilities/research" to="CanvasLayer/utilities/research" method="_on_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/local_approval" to="CanvasLayer/local_approval" method="_on_pressed"]
