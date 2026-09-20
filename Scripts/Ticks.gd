@@ -75,7 +75,6 @@ func proc_tick():
 	
 	calculate_pop_cap()
 	calculate_pop_conversions()
-	calculate_pop_growth()
 	
 func calculate_res_change_per_second() -> void:
 	pass

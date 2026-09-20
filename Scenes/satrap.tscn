@@ -721,7 +721,7 @@ script = ExtResource("4_iv1gs")
 [node name="vert" type="Parallax2D" parent="world" unique_id=1001035445]
 scroll_offset = Vector2(-985, -144)
 repeat_size = Vector2(1116, 841.355)
-repeat_times = 3
+repeat_times = 10
 
 [node name="vert1" type="Sprite2D" parent="world/vert" unique_id=959746599]
 self_modulate = Color(0, 1, 0, 0.06666667)
@@ -798,7 +798,7 @@ texture = ExtResource("26_dxpk8")
 [node name="horz" type="Parallax2D" parent="world" unique_id=1513010436]
 scroll_offset = Vector2(-775.1, -748)
 repeat_size = Vector2(860.1, 841.355)
-repeat_times = 3
+repeat_times = 10
 
 [node name="horz1" type="Sprite2D" parent="world/horz" unique_id=250780465]
 self_modulate = Color(0, 1, 0, 0.06666667)

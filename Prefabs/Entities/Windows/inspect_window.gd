@@ -33,7 +33,7 @@ func click_building(building) -> void:
 			building_name = "Village"
 			stat_details = "People live here."
 		_:
-			building_name = "???"
+			building_name = building.building_name
 			stat_details = "I have never seen that before in my life."
 	
 	$ascii_patch/building_name.text = building_name

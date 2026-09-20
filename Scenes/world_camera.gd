@@ -21,4 +21,10 @@ func _process(delta):
 		get_tree().get_meta("inspect_window").forget_building()
 		get_tree().get_meta("action_window").forget_building()
 		
-	position += movement_vector * camera_speed * delta
+	position += movement_vector * camera_speed * delta * (1/zoom.x)
+	
+	#if Input.is_action_just_pressed("scroll_up"):
+		#zoom = clamp(zoom + Vector2(0.1, 0.1), Vector2(0, 0),  5 * Vector2(2, 2))
+	#
+	#if Input.is_action_just_pressed("scroll_down"):
+		#zoom = clamp(zoom - Vector2(0.1, 0.1), Vector2(1, 1), 5 * Vector2(2, 2))
