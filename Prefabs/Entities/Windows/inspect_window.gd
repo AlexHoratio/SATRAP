@@ -25,7 +25,7 @@ func click_building(building) -> void:
 	match building.building_name:
 		"Civilian":
 			building_name = "Civilian Building"
-			stat_details = "> 99/100 (pop/cap)"
+			stat_details = "> +3 capacity."
 		"Administration":
 			building_name = "Administration"
 			stat_details = "Protect it!"

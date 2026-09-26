@@ -36,8 +36,10 @@ func update_text() -> void:
 
 [color=#0f0]" + str(int(Ticks.local_interests["other"])) + " [color=#00ff0055](" + str(props["o"]) + "%)"
 	
+	var cap_text_colour = "[color=#444]" if Ticks.pop_cap >= pop_total else "[color=#f00]"
+	
 	$ascii_patch/total_r.text = "[color=#0f0]" + str(int(pop_total)) + " citizens
-[color=#444]" + str(int(Ticks.pop_cap)) + " capacity"
+" + cap_text_colour + str(int(Ticks.pop_cap)) + " capacity"
 		
 func close() -> void:
 	emit_signal("closed")

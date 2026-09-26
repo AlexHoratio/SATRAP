@@ -97,7 +97,7 @@ func calculate_pop_cap() -> void:
 	pop_cap = 0
 	for building in get_tree().get_nodes_in_group("buildings"):
 		if building.building_name == "Civilian":
-			pop_cap += 25
+			pop_cap += 3
 			
 func get_pop_total() -> int:
 	var total = 0
