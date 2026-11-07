@@ -19,6 +19,7 @@ config/icon="uid://bom77rya36xor"
 
 Ticks="*uid://cqdbnrh8tvoxe"
 Saves="*uid://ibtnwf5s2pf0"
+Policies="*uid://bt7k88vc6q4nf"
 
 [display]
 

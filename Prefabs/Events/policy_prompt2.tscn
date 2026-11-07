@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://djaj0bqsj4lw4"]
+
+[ext_resource type="Script" uid="uid://ca0w4fxqdgbpq" path="res://Prefabs/Events/policy_prompt.gd" id="1_2mrl3"]
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="2_fdmrg"]
+[ext_resource type="Texture2D" uid="uid://b8j203277t1t3" path="res://Graphics/CanvasLayer/ascii_border_filled_darker.png" id="3_b2fmt"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="4_0d4db"]
+[ext_resource type="FontFile" uid="uid://dmlpvoj5p22oo" path="res://Graphics/Fonts/almendra-sc/AlmendraSC-Regular.ttf" id="5_dnn1v"]
+
+[node name="policy_prompt2" type="Control" unique_id=55839680]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_2mrl3")
+
+[node name="bg" parent="." unique_id=58068374 instance=ExtResource("2_fdmrg")]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 359.0
+offset_right = 891.0
+offset_bottom = 423.0
+texture = ExtResource("3_b2fmt")
+
+[node name="message" type="RichTextLabel" parent="bg" unique_id=1828123344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 23.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_0d4db")
+theme_override_fonts/italics_font = ExtResource("5_dnn1v")
+bbcode_enabled = true
+text = "Adopt the 'Standardize Currency' policy ->"
+autowrap_mode = 2
+horizontal_alignment = 1

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bhbb18kf8nnvg"]
+
+[ext_resource type="PackedScene" uid="uid://tgc3hym3uof4" path="res://Prefabs/CanvasLayer/ascii_patch.tscn" id="1_cb7bh"]
+[ext_resource type="Script" uid="uid://ca0w4fxqdgbpq" path="res://Prefabs/Events/policy_prompt.gd" id="1_lm2i0"]
+[ext_resource type="Texture2D" uid="uid://b8j203277t1t3" path="res://Graphics/CanvasLayer/ascii_border_filled_darker.png" id="2_lm2i0"]
+[ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_5fbru"]
+[ext_resource type="FontFile" uid="uid://dmlpvoj5p22oo" path="res://Graphics/Fonts/almendra-sc/AlmendraSC-Regular.ttf" id="4_j7uv8"]
+
+[node name="policy_prompt" type="Control" unique_id=55839680]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_lm2i0")
+
+[node name="bg" parent="." unique_id=58068374 instance=ExtResource("1_cb7bh")]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 844.0
+offset_right = 786.0
+offset_bottom = 998.0
+texture = ExtResource("2_lm2i0")
+
+[node name="message" type="RichTextLabel" parent="bg" unique_id=1828123344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_5fbru")
+theme_override_fonts/italics_font = ExtResource("4_j7uv8")
+bbcode_enabled = true
+text = "There are some big problems in this satrapy.
+
+Let's start by enacting a policy.
+
+Open the [color=#5f5][i][font_size=20]Policy window[/font_size][/i][color=#0f0] to begin."
+autowrap_mode = 2
+horizontal_alignment = 1
