@@ -63,6 +63,10 @@ func _ready():
 	tick.connect(proc_tick)
 
 func _process(delta):
+	if get_tree().has_meta("event_manager"):
+		if get_tree().get_meta("event_manager").current_event != null:
+			game_paused = true
+		
 	if !game_paused:
 		tick_timer += delta * speed_multiplier
 		if tick_timer > tick_speed:

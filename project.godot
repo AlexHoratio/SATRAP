@@ -18,6 +18,7 @@ config/icon="uid://bom77rya36xor"
 [autoload]
 
 Ticks="*uid://cqdbnrh8tvoxe"
+Saves="*uid://ibtnwf5s2pf0"
 
 [display]
 

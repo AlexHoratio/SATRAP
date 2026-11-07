@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsrv54m2cvqwa"]
 
-[ext_resource type="Texture2D" uid="uid://cyvbi81ii6bi6" path="res://Graphics/images.jpg" id="1_fm0yt"]
 [ext_resource type="Script" uid="uid://cbtut4sbpxi6m" path="res://Scenes/satrap.gd" id="1_vfb65"]
+[ext_resource type="Script" uid="uid://bkqg1efnsan2p" path="res://Scenes/event_manager.gd" id="2_4wyyb"]
 [ext_resource type="Script" uid="uid://be68x2fittjf3" path="res://Scenes/construction_util_button.gd" id="3_0a1jj"]
 [ext_resource type="Script" uid="uid://df5oud1b05y2d" path="res://Scenes/local_approval_button.gd" id="3_42a5o"]
 [ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="3_y32xm"]
@@ -38,18 +38,6 @@
 [ext_resource type="Texture2D" uid="uid://opextdfasd1s" path="res://Graphics/Entities/Trace/lines/horz/horz7.png" id="33_18qia"]
 [ext_resource type="Texture2D" uid="uid://36w1bg5uhxo8" path="res://Graphics/Entities/Trace/lines/horz/horz8.png" id="34_km1i7"]
 [ext_resource type="Texture2D" uid="uid://cxvarwyjqujcb" path="res://Graphics/Entities/Trace/lines/horz/horz9.png" id="35_4wyyb"]
-
-[sub_resource type="GDScript" id="GDScript_5ytj4"]
-script/source = "extends Button
-
-func _process(delta):
-	position = get_node(\"../Camera2D\").position - Vector2(1000, 1000)
-
-
-func _on_pressed():
-	get_tree().get_meta(\"inspect_window\").forget_building()
-	get_tree().get_meta(\"action_window\").forget_building()
-"
 
 [sub_resource type="Shader" id="Shader_u8pq8"]
 code = "shader_type canvas_item;
@@ -238,6 +226,18 @@ func _process(delta):
 	text = \"Food: \" + str(int(Ticks.resources[\"food\"]))
 "
 
+[sub_resource type="GDScript" id="GDScript_5ytj4"]
+script/source = "extends Button
+
+func _process(delta):
+	position = get_node(\"../Camera2D\").position - Vector2(1000, 1000)
+
+
+func _on_pressed():
+	get_tree().get_meta(\"inspect_window\").forget_building()
+	get_tree().get_meta(\"action_window\").forget_building()
+"
+
 [node name="satrap" type="Control" unique_id=1710664835]
 layout_mode = 3
 anchors_preset = 15
@@ -247,20 +247,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vfb65")
 
-[node name="background" type="Button" parent="." unique_id=1626926748]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -291.0
-offset_top = -217.0
-offset_right = 329.0
-offset_bottom = 297.0
-grow_horizontal = 2
-grow_vertical = 2
-button_mask = 3
-script = SubResource("GDScript_5ytj4")
+[node name="event_manager" type="Node" parent="." unique_id=1162158682]
+script = ExtResource("2_4wyyb")
+
+[node name="proc_intro" type="Timer" parent="event_manager" unique_id=2036508600]
+wait_time = 2.5
+one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1265064259]
 
@@ -562,8 +554,6 @@ color = Color(0, 0, 0, 1)
 layout_mode = 3
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 133.0
-offset_bottom = 133.0
 grow_horizontal = 2
 script = ExtResource("6_sncgy")
 
@@ -671,49 +661,20 @@ theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_y32xm")
 script = SubResource("GDScript_af5lw")
 
-[node name="Images" type="Sprite2D" parent="." unique_id=863690617]
-visible = false
-position = Vector2(722, 516)
-texture = ExtResource("1_fm0yt")
-
-[node name="asdfasd" type="LinkButton" parent="." unique_id=2137662787]
-visible = false
+[node name="background" type="Button" parent="." unique_id=1626926748]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -81.0
-offset_top = -269.0
-offset_right = 81.0
-offset_bottom = -221.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_fonts/font = ExtResource("3_y32xm")
-theme_override_font_sizes/font_size = 48
-text = "> Ok <"
-underline = 2
-
-[node name="shadow" type="Label" parent="asdfasd" unique_id=1305118068]
-self_modulate = Color(1, 1, 1, 0.20392157)
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -12.0
-offset_right = 81.0
-offset_bottom = 36.0
+offset_left = -291.0
+offset_top = -217.0
+offset_right = 329.0
+offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_y32xm")
-theme_override_font_sizes/font_size = 48
-text = "> Ok <"
+button_mask = 3
+script = SubResource("GDScript_5ytj4")
 
 [node name="world" type="Node2D" parent="." unique_id=393979327]
 script = ExtResource("4_iv1gs")
@@ -866,12 +827,12 @@ visible = false
 layout_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=62294094]
-position = Vector2(720, 540)
+position = Vector2(748, 572)
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 script = ExtResource("7_42a5o")
 
-[connection signal="pressed" from="background" to="background" method="_on_pressed"]
+[connection signal="timeout" from="event_manager/proc_intro" to="event_manager" method="_on_proc_intro_timeout"]
 [connection signal="mouse_entered" from="CanvasLayer/utilities/construction" to="CanvasLayer/utilities/construction" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/utilities/construction" to="CanvasLayer/utilities/construction" method="_on_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/utilities/construction" to="CanvasLayer/utilities/construction" method="_on_pressed"]
@@ -894,4 +855,4 @@ script = ExtResource("7_42a5o")
 [connection signal="button_up" from="CanvasLayer/top_bar/console/info_bar/drag" to="CanvasLayer/top_bar" method="_on_drag_button_up"]
 [connection signal="pressed" from="CanvasLayer/top_bar/console/info_bar/playpause" to="CanvasLayer/top_bar/console/info_bar/playpause" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/top_bar/console/info_bar/speed" to="CanvasLayer/top_bar/console/info_bar/speed" method="_on_pressed"]
-[connection signal="pressed" from="asdfasd" to="." method="_on_asdfasd_pressed"]
+[connection signal="pressed" from="background" to="background" method="_on_pressed"]
