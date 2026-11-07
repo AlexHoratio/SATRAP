@@ -33,12 +33,6 @@ func proc_policy_prompt2() -> void:
 		
 		current_event = policy_prompt
 	
-func proc_standardize_currency_event() -> void:
-	if !Saves.tutorial_muted:
-		var standardize_currency_event = load("res://Prefabs/Events/standardize_currency_event.tscn").instantiate()
-		standardize_currency_event.close.connect(close_event)
-		get_node("../CanvasLayer").add_child(standardize_currency_event)
-	
 func open_event(event_id) -> void:
 	var event = load("res://Prefabs/Events/" + event_id + ".tscn").instantiate()
 	event.close.connect(close_event)

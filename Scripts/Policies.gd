@@ -13,8 +13,6 @@ var policy_information = {
 
 var available_policies = []
 
-var policy_decisions = {}
-
 
 func ready() -> void:
 	pass
@@ -22,8 +20,8 @@ func ready() -> void:
 func update_available_policies() -> void:
 	available_policies = []
 	
-	if not("standardize_currency" in policy_decisions.keys()):
+	if not("standardize_currency" in Events.event_decisions.keys()):
 		available_policies.append("standardize_currency")
 	
-	if not("education_reform" in policy_decisions.keys()):
+	if not("education_reform" in Events.event_decisions.keys()):
 		available_policies.append("education_reform")
