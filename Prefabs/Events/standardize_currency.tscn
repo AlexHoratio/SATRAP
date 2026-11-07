@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://umn6u7qbb6il" path="res://Graphics/Fonts/MorePerfectDOSVGA.ttf" id="4_hywxy"]
 [ext_resource type="FontFile" uid="uid://dmlpvoj5p22oo" path="res://Graphics/Fonts/almendra-sc/AlmendraSC-Regular.ttf" id="5_3yq11"]
 [ext_resource type="Texture2D" uid="uid://b8j203277t1t3" path="res://Graphics/CanvasLayer/ascii_border_filled_darker.png" id="6_6sohp"]
+[ext_resource type="Script" uid="uid://b6mm1nfpayvnp" path="res://Prefabs/Events/advisor_links.gd" id="7_5iot3"]
+[ext_resource type="FontFile" uid="uid://cqg3u6amuw02o" path="res://Graphics/Fonts/almendra/Almendra-Regular.ttf" id="8_a4t07"]
 
 [sub_resource type="GDScript" id="GDScript_8a5t6"]
 script/source = "extends NinePatchRect
@@ -204,7 +206,117 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_default_cursor_shape = 2
 
+[node name="advisors" type="Control" parent="." unique_id=2028559842]
+anchors_preset = 0
+offset_left = 62.0
+offset_top = 260.0
+offset_right = 326.0
+offset_bottom = 519.0
+script = ExtResource("7_5iot3")
+
+[node name="ascii_patch" parent="advisors" unique_id=671510014 instance=ExtResource("2_5iot3")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_6sohp")
+
+[node name="header" type="Label" parent="advisors" unique_id=1413483016]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.14348939, 0.9999998, 0.12722051, 1)
+theme_override_fonts/font = ExtResource("4_hywxy")
+theme_override_font_sizes/font_size = 32
+text = "Advisors"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line" type="Label" parent="advisors" unique_id=737111917]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 58.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.14348939, 0.9999998, 0.12722051, 1)
+theme_override_fonts/font = ExtResource("4_hywxy")
+theme_override_font_sizes/font_size = 32
+text = "------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="advisors" type="VBoxContainer" parent="advisors" unique_id=144971727]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+
+[node name="vizier" type="LinkButton" parent="advisors/advisors" unique_id=1028355746]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.7155432, 1, 0.6898725, 1)
+theme_override_colors/font_disabled_color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("5_3yq11")
+theme_override_font_sizes/font_size = 22
+text = "Ask the Vizier"
+underline = 1
+
+[node name="dramaturge" type="LinkButton" parent="advisors/advisors" unique_id=1956465635]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.7155432, 1, 0.6898725, 1)
+theme_override_colors/font_disabled_color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("5_3yq11")
+theme_override_font_sizes/font_size = 22
+text = "Ask the Dramaturge"
+underline = 1
+
+[node name="attache" type="LinkButton" parent="advisors/advisors" unique_id=956239210]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.7155432, 1, 0.6898725, 1)
+theme_override_colors/font_disabled_color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("5_3yq11")
+theme_override_font_sizes/font_size = 22
+text = "Ask the Attache"
+underline = 1
+
+[node name="advice" type="RichTextLabel" parent="advisors" unique_id=928106748]
+layout_mode = 0
+offset_top = 280.0
+offset_right = 264.0
+offset_bottom = 559.0
+theme_override_colors/default_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/normal_font = ExtResource("8_a4t07")
+theme_override_fonts/italics_font = ExtResource("5_3yq11")
+theme_override_font_sizes/italics_font_size = 20
+bbcode_enabled = true
+
+[node name="advice_expire" type="Timer" parent="advisors" unique_id=934819664]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="mouse_entered" from="options/buyout/Button" to="options/buyout" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="options/buyout/Button" to="options/buyout" method="_on_button_mouse_exited"]
 [connection signal="mouse_entered" from="options/declaration/Button" to="options/declaration" method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="options/declaration/Button" to="options/declaration" method="_on_button_mouse_exited"]
+[connection signal="timeout" from="advisors/advice_expire" to="advisors" method="_on_advice_expire_timeout"]

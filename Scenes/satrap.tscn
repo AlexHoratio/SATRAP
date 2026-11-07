@@ -251,7 +251,7 @@ script = ExtResource("1_vfb65")
 script = ExtResource("2_4wyyb")
 
 [node name="proc_intro" type="Timer" parent="event_manager" unique_id=2036508600]
-wait_time = 2.5
+wait_time = 0.009999999999999998
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1265064259]
